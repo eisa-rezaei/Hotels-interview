@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
 * {
   border: 0;
   margin: 0;
@@ -13,3 +16,8 @@
   justify-content: left;
   text-transform: capitalize;
 }
+a {
+  text-decoration: none;
+}
+
+`;

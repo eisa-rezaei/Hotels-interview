@@ -1,47 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
+import { SideBarData } from "../data/data";
 import {
-  PagesHeader,
-  PagesHeaderLinks,
-  PagesHeaderLogo,
-  PagesHeaderUserImage,
-  PagesHeaderSideBar,
-} from "./Header.styled";
+  StyledHeader,
+  StyledHeaderLinks,
+  StyledHeaderLogo,
+  StyledHeaderUserImage,
+  StyledHeaderSideBar,
+  StyledSliderContainer,
+  StyledSliderUrderList,
+  StyledSliderListItem,
+  StyledSliderListItemIcon,
+  StyledSliderUrderListIcon,
+} from "./Header.styles";
+
 import headerLogo from "../assets/header-logo.svg";
 import userImage from "../assets/user-image.svg";
+
 const Header = () => {
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+
+  const HandeltoggleSideBar = () => () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  };
+
   return (
-    <PagesHeader>
-      <PagesHeaderSideBar>
-        <GiHamburgerMenu />
-      </PagesHeaderSideBar>
-      <PagesHeaderLogo>
-        <Link to="/">
-          <img src={headerLogo} alt="header-logo" />
-        </Link>
-      </PagesHeaderLogo>
-      <PagesHeaderLinks>
-        <Link to="/" key="1">
-          Home
-        </Link>
-        <Link to="/favorites" key="2">
-          favorites
-        </Link>
-        <Link to="/saved" key="3">
-          saved
-        </Link>
-        <Link to="/popular" key="4">
-          populars
-        </Link>
-        <Link to="/contact" key="5">
-          contact
-        </Link>
-      </PagesHeaderLinks>
-      <PagesHeaderUserImage>
-        <img src={userImage} alt="userProfile" />
-      </PagesHeaderUserImage>
-    </PagesHeader>
+    <>
+      <StyledHeader>
+        <StyledHeaderSideBar>
+          <GiHamburgerMenu onClick={HandeltoggleSideBar()} />
+        </StyledHeaderSideBar>
+        <StyledHeaderLogo>
+          <Link to="/">
+            <img src={headerLogo} alt="header-logo" />
+          </Link>
+        </StyledHeaderLogo>
+        <StyledHeaderLinks>
+          <Link to="/" key="1">
+            Home
+          </Link>
+          <Link to="/favorites" key="2">
+            favorites
+          </Link>
+          <Link to="/saved" key="3">
+            saved
+          </Link>
+          <Link to="/popular" key="4">
+            populars
+          </Link>
+          <Link to="/contact" key="5">
+            contact
+          </Link>
+        </StyledHeaderLinks>
+        <StyledHeaderUserImage>
+          <img src={userImage} alt="userProfile" />
+        </StyledHeaderUserImage>
+      </StyledHeader>
+      <StyledSliderContainer isSideBarOpen={isSideBarOpen}>
+        <StyledSliderUrderList>
+          <StyledSliderUrderListIcon>
+            <AiOutlineClose onClick={HandeltoggleSideBar()} />
+          </StyledSliderUrderListIcon>
+          {SideBarData.map(({ path, icon, title }, index) => (
+            <Link key={index} to={path}>
+              <StyledSliderListItem onClick={HandeltoggleSideBar()}>
+                <StyledSliderListItemIcon>{icon}</StyledSliderListItemIcon>
+                {title}
+              </StyledSliderListItem>
+            </Link>
+          ))}
+        </StyledSliderUrderList>
+      </StyledSliderContainer>
+    </>
   );
 };
 
