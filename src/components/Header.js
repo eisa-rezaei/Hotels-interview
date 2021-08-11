@@ -1,16 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 import {
   PagesHeader,
   PagesHeaderLinks,
   PagesHeaderLogo,
   PagesHeaderUserImage,
+  PagesHeaderSideBar,
 } from "./Header.styled";
 import headerLogo from "../assets/header-logo.svg";
 import userImage from "../assets/user-image.svg";
 const Header = () => {
   return (
     <PagesHeader>
+      <PagesHeaderSideBar>
+        <GiHamburgerMenu />
+      </PagesHeaderSideBar>
       <PagesHeaderLogo>
         <Link to="/">
           <img src={headerLogo} alt="header-logo" />
