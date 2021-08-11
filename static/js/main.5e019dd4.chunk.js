@@ -1,2 +1,0 @@
-(this.webpackJsonphotels=this.webpackJsonphotels||[]).push([[0],{11:function(t,e,n){"use strict";n.r(e);var c=n(1),s=n.n(c),o=n(3),r=n.n(o),i=(n(8),n(9),n(0));var a=function(){return Object(i.jsx)("div",{className:"App"})};r.a.render(Object(i.jsx)(s.a.StrictMode,{children:Object(i.jsx)(a,{})}),document.getElementById("root"))},8:function(t,e,n){},9:function(t,e,n){}},[[11,1,2]]]);
-//# sourceMappingURL=main.5e019dd4.chunk.js.map

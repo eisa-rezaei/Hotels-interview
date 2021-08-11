@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/Hotels-interview/static/css/main.925610cc.chunk.css",
-    "main.js": "/Hotels-interview/static/js/main.5e019dd4.chunk.js",
-    "main.js.map": "/Hotels-interview/static/js/main.5e019dd4.chunk.js.map",
+    "main.css": "/Hotels-interview/static/css/main.bf706783.chunk.css",
+    "main.js": "/Hotels-interview/static/js/main.baf52dfa.chunk.js",
+    "main.js.map": "/Hotels-interview/static/js/main.baf52dfa.chunk.js.map",
     "runtime-main.js": "/Hotels-interview/static/js/runtime-main.23439406.js",
     "runtime-main.js.map": "/Hotels-interview/static/js/runtime-main.23439406.js.map",
-    "static/js/2.98ee6bb1.chunk.js": "/Hotels-interview/static/js/2.98ee6bb1.chunk.js",
-    "static/js/2.98ee6bb1.chunk.js.map": "/Hotels-interview/static/js/2.98ee6bb1.chunk.js.map",
+    "static/js/2.05c9629f.chunk.js": "/Hotels-interview/static/js/2.05c9629f.chunk.js",
+    "static/js/2.05c9629f.chunk.js.map": "/Hotels-interview/static/js/2.05c9629f.chunk.js.map",
     "index.html": "/Hotels-interview/index.html",
-    "static/css/main.925610cc.chunk.css.map": "/Hotels-interview/static/css/main.925610cc.chunk.css.map",
-    "static/js/2.98ee6bb1.chunk.js.LICENSE.txt": "/Hotels-interview/static/js/2.98ee6bb1.chunk.js.LICENSE.txt"
+    "static/css/main.bf706783.chunk.css.map": "/Hotels-interview/static/css/main.bf706783.chunk.css.map",
+    "static/js/2.05c9629f.chunk.js.LICENSE.txt": "/Hotels-interview/static/js/2.05c9629f.chunk.js.LICENSE.txt",
+    "static/media/header-logo.e059dc4b.svg": "/Hotels-interview/static/media/header-logo.e059dc4b.svg",
+    "static/media/user-image.95f01369.svg": "/Hotels-interview/static/media/user-image.95f01369.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.23439406.js",
-    "static/js/2.98ee6bb1.chunk.js",
-    "static/css/main.925610cc.chunk.css",
-    "static/js/main.5e019dd4.chunk.js"
+    "static/js/2.05c9629f.chunk.js",
+    "static/css/main.bf706783.chunk.css",
+    "static/js/main.baf52dfa.chunk.js"
   ]
 }
