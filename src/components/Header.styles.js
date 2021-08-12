@@ -15,6 +15,7 @@ export const StyledHeader = styled.header`
     padding: 0 1.5rem;
   }
 `;
+// Header Links
 export const StyledHeaderLinks = styled.div`
   width: 45vw;
   height: 8vh;
@@ -52,6 +53,7 @@ export const StyledHeaderLinks = styled.div`
     display: none;
   }
 `;
+// Header Logo
 export const StyledHeaderLogo = styled.span`
   display: flex;
   align-items: center;
@@ -67,6 +69,7 @@ export const StyledHeaderLogo = styled.span`
     }
   }
 `;
+// user Image
 export const StyledHeaderUserImage = styled.span`
   display: flex;
   align-items: center;
@@ -83,6 +86,7 @@ export const StyledHeaderUserImage = styled.span`
     }
   }
 `;
+// sideBar toggle icon
 export const StyledHeaderSideBar = styled.span`
   display: none;
   @media (max-width: 600px) {
@@ -90,17 +94,22 @@ export const StyledHeaderSideBar = styled.span`
     align-items: center;
     font-size: 7vw;
     cursor: pointer;
+    & svg:hover {
+      color: #888;
+    }
   }
 `;
+// sideBar container
 export const StyledSliderContainer = styled.div`
   width: 100vw;
   top: 0;
   height: auto;
   position: absolute;
-  transition: all 0.3s linear;
+  transition: all 0.25s linear;
   transform: ${(props) =>
     props.isSideBarOpen ? "translate(0, 0)" : "translate(-100%, -100%)"};
 `;
+// sideBar ul
 export const StyledSliderUrderList = styled.ul`
   top: 0;
   left: 0;
@@ -113,9 +122,10 @@ export const StyledSliderUrderList = styled.ul`
   background-color: #263036;
   font-size: 1.5em;
 `;
+// sideBar li
 export const StyledSliderListItem = styled.li`
   width: 100vw;
-  height: 5rem;
+  height: 5.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -124,22 +134,26 @@ export const StyledSliderListItem = styled.li`
   color: #e0e0e0;
   &:hover {
     background-color: seagreen;
+    cursor: pointer;
   }
 `;
+// sideBar li icon
 export const StyledSliderListItemIcon = styled.span`
   display: flex;
   align-items: center;
-  margin: 0 15px;
+  margin: 10px 15px;
   color: red;
 `;
-
+// sideBar close icon
 export const StyledSliderUrderListIcon = styled.span`
-  height: 8vh;
+  height: 6vh;
   color: red;
   display: flex;
   font-size: 5vh;
-  cursor: pointer;
-  margin-top: 10px;
+  margin-top: 15px;
   align-items: center;
-  padding-left: 1.5rem;
+  padding-left: 30px;
+  & svg {
+    cursor: pointer;
+  }
 `;
