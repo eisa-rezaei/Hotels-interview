@@ -21,6 +21,12 @@ export const GlobalStyle = createGlobalStyle`
 }
 a {
   text-decoration: none;
+  & :focus{
+    color: inherit;
+  }
+  & :active{
+    color: inherit;
+  }
 }
 
 `;
