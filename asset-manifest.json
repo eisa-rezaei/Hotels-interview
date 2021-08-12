@@ -1,19 +1,26 @@
 {
   "files": {
-    "main.js": "/Hotels-interview/static/js/main.54f470f9.chunk.js",
-    "main.js.map": "/Hotels-interview/static/js/main.54f470f9.chunk.js.map",
+    "main.js": "/Hotels-interview/static/js/main.74a8d224.chunk.js",
+    "main.js.map": "/Hotels-interview/static/js/main.74a8d224.chunk.js.map",
     "runtime-main.js": "/Hotels-interview/static/js/runtime-main.23439406.js",
     "runtime-main.js.map": "/Hotels-interview/static/js/runtime-main.23439406.js.map",
-    "static/js/2.8ce420d3.chunk.js": "/Hotels-interview/static/js/2.8ce420d3.chunk.js",
-    "static/js/2.8ce420d3.chunk.js.map": "/Hotels-interview/static/js/2.8ce420d3.chunk.js.map",
+    "static/css/2.3f61f6f4.chunk.css": "/Hotels-interview/static/css/2.3f61f6f4.chunk.css",
+    "static/js/2.69edb69f.chunk.js": "/Hotels-interview/static/js/2.69edb69f.chunk.js",
+    "static/js/2.69edb69f.chunk.js.map": "/Hotels-interview/static/js/2.69edb69f.chunk.js.map",
     "index.html": "/Hotels-interview/index.html",
-    "static/js/2.8ce420d3.chunk.js.LICENSE.txt": "/Hotels-interview/static/js/2.8ce420d3.chunk.js.LICENSE.txt",
+    "static/css/2.3f61f6f4.chunk.css.map": "/Hotels-interview/static/css/2.3f61f6f4.chunk.css.map",
+    "static/js/2.69edb69f.chunk.js.LICENSE.txt": "/Hotels-interview/static/js/2.69edb69f.chunk.js.LICENSE.txt",
     "static/media/header-logo.e059dc4b.svg": "/Hotels-interview/static/media/header-logo.e059dc4b.svg",
-    "static/media/user-image.95f01369.svg": "/Hotels-interview/static/media/user-image.95f01369.svg"
+    "static/media/hotel-picture-1.28352838.jpeg": "/Hotels-interview/static/media/hotel-picture-1.28352838.jpeg",
+    "static/media/hotel-picture-2.b1ee56d5.jpeg": "/Hotels-interview/static/media/hotel-picture-2.b1ee56d5.jpeg",
+    "static/media/hotel-picture-3.efef0ae8.jpeg": "/Hotels-interview/static/media/hotel-picture-3.efef0ae8.jpeg",
+    "static/media/hotel-picture-4.c3375184.jpeg": "/Hotels-interview/static/media/hotel-picture-4.c3375184.jpeg",
+    "static/media/user-image.4d6d6ba9.png": "/Hotels-interview/static/media/user-image.4d6d6ba9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.23439406.js",
-    "static/js/2.8ce420d3.chunk.js",
-    "static/js/main.54f470f9.chunk.js"
+    "static/css/2.3f61f6f4.chunk.css",
+    "static/js/2.69edb69f.chunk.js",
+    "static/js/main.74a8d224.chunk.js"
   ]
 }
