@@ -77,7 +77,7 @@ export const StyledHeaderUserImage = styled.span`
     width: 4.5vw;
     height: 4.5vw;
     border-radius: 50%;
-    object-fit: fill;
+    object-fit: contain;
     border: 1px solid seagreen;
     cursor: pointer;
     @media (max-width: 600px) {
@@ -106,6 +106,8 @@ export const StyledSliderContainer = styled.div`
   height: auto;
   position: absolute;
   transition: all 0.25s linear;
+  font-size: 0.8rem;
+  z-index: 10;
   transform: ${(props) =>
     props.isSideBarOpen ? "translate(0, 0)" : "translate(-100%, -100%)"};
 `;

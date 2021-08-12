@@ -16,8 +16,8 @@ import {
   StyledSliderUrderListIcon,
 } from "./Header.styles";
 
-import headerLogo from "../assets/header-logo.svg";
-import userImage from "../assets/user-image.svg";
+import headerLogo from "../assets/header/header-logo.svg";
+import userImage from "../assets/header/user-image.png";
 
 const Header = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
