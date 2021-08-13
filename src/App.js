@@ -22,7 +22,7 @@ function App() {
             <Route path="/popular" children={<Popular />} />
             <Route path="/favorites" children={<Favorites />} />
             <Route path="/contact" children={<Contact />} />
-            <Route path="/hotelPage" children={<SelectedHotelPage />} />
+            <Route path="/hotelPage/:id" children={<SelectedHotelPage />} />
           </Switch>
         </Router>
       </div>
