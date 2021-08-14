@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -10,15 +10,18 @@ import {
   StyledHotelListItemRatePart,
   StyledHotelListItemTitle,
 } from "./HotelsStyles";
-import { useSelector, useDispatch } from "react-redux";
-import { setFavorite, setSaved } from "../../../redux/actions/productActions";
+import { useDispatch } from "react-redux";
+import {
+  setFavorite,
+  removeFavorite,
+} from "../../../redux/favorites/productActions";
+import { useBooleanCheck } from "../booleanCheck";
 
 const HotelsList = () => {
-  const favorites = useSelector((state) => state.favoritesHotel);
   const dispatch = useDispatch();
-  console.log(favorites);
+  const isFavorite = useBooleanCheck();
 
-  const addToFavoriteHandler =
+  const toggleFavoriteHandler =
     ({ img, title, location, price, rate, id }) =>
     () => {
       const hotel = {
@@ -29,7 +32,12 @@ const HotelsList = () => {
         rate,
         id,
       };
-      dispatch(setFavorite(hotel));
+      if (!isFavorite(hotel, id)) {
+        dispatch(setFavorite(hotel));
+      }
+      if (isFavorite(hotel.id)) {
+        dispatch(removeFavorite(hotel));
+      }
     };
   return (
     <StyledHotelListContainer>
@@ -49,16 +57,29 @@ const HotelsList = () => {
               </p>
             </StyledHotelListItemTitle>
             <StyledHotelListItemRatePart>
-              <AiOutlineHeart
-                onClick={addToFavoriteHandler({
-                  img,
-                  title,
-                  location,
-                  price,
-                  rate,
-                  id,
-                })}
-              />
+              {isFavorite(id) ? (
+                <AiFillHeart
+                  onClick={toggleFavoriteHandler({
+                    img,
+                    title,
+                    location,
+                    price,
+                    rate,
+                    id,
+                  })}
+                />
+              ) : (
+                <AiOutlineHeart
+                  onClick={toggleFavoriteHandler({
+                    img,
+                    title,
+                    location,
+                    price,
+                    rate,
+                    id,
+                  })}
+                />
+              )}
               <span>
                 {rate} <FaStar />
               </span>

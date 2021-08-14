@@ -48,7 +48,7 @@ export const StyledHotelListItemTitle = styled.span`
   font-size: 1rem;
 
   & h5 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-left: 5px;
   }
   & h6 {
@@ -61,7 +61,7 @@ export const StyledHotelListItemTitle = styled.span`
     & svg {
       margin-right: 5px;
       color: #4e7cb3;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
   }
   & p {
@@ -99,6 +99,7 @@ export const StyledHotelListItemRatePart = styled.span`
   & svg {
     color: red;
     cursor: pointer;
+    font-size: 1.5rem;
     :hover {
       color: #ffaaaa;
     }
