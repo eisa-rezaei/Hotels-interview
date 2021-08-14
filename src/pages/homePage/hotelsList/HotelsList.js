@@ -10,8 +10,27 @@ import {
   StyledHotelListItemRatePart,
   StyledHotelListItemTitle,
 } from "./HotelsStyles";
+import { useSelector, useDispatch } from "react-redux";
+import { setFavorite, setSaved } from "../../../redux/actions/productActions";
 
 const HotelsList = () => {
+  const favorites = useSelector((state) => state.favoritesHotel);
+  const dispatch = useDispatch();
+  console.log(favorites);
+
+  const addToFavoriteHandler =
+    ({ img, title, location, price, rate, id }) =>
+    () => {
+      const hotel = {
+        img,
+        title,
+        location,
+        price,
+        rate,
+        id,
+      };
+      dispatch(setFavorite(hotel));
+    };
   return (
     <StyledHotelListContainer>
       {HomePageSliderOne.map(
@@ -30,7 +49,16 @@ const HotelsList = () => {
               </p>
             </StyledHotelListItemTitle>
             <StyledHotelListItemRatePart>
-              <AiOutlineHeart />
+              <AiOutlineHeart
+                onClick={addToFavoriteHandler({
+                  img,
+                  title,
+                  location,
+                  price,
+                  rate,
+                  id,
+                })}
+              />
               <span>
                 {rate} <FaStar />
               </span>

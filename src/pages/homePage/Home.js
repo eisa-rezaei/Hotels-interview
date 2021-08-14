@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <StyledHomePageContainer>
       <StyledSearchPart>
-        <StyledSearchPartTitle>choose your best hotel !</StyledSearchPartTitle>
+        <StyledSearchPartTitle>choose your best hotel!</StyledSearchPartTitle>
         <span>
           <RiSearch2Line /> <RiSearch2Line />
         </span>
