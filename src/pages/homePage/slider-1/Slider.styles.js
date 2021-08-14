@@ -16,6 +16,7 @@ export const StyledSliderSingleItem = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: #e0e0e0;
+
   & img {
     width: 100%;
     height: 45vw;

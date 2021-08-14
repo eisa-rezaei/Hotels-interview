@@ -9,6 +9,11 @@ export const StyledHeader = styled.header`
   justify-content: space-around;
   font-size: 1.7vw;
   border-bottom: 1px solid seagreen;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 10;
   @media (max-width: 600px) {
     height: 10vh;
     justify-content: space-between;

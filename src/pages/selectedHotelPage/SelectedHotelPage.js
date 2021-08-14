@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FaRegBookmark, FaStar } from "react-icons/fa";
+import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { HomePageSliderOne } from "../../data/data";
@@ -6,6 +8,10 @@ import {
   StyledSelectedHotelContainer,
   StyledSelectedHotelDetails,
   StyledSelectedHotel,
+  StyledSelectedHotelDetailsTitle,
+  StyledSelectedHotelDetailsFeatures,
+  StyledSelectedHotelDetailsPrice,
+  StyledSelectedHotelDetailsSaveMark,
 } from "./SelectedHotelPage.styles";
 
 const SelectedHotelPage = () => {
@@ -16,20 +22,42 @@ const SelectedHotelPage = () => {
       (hotel) => hotel.id === parseInt(id)
     );
     setSelectedHotel(hotel);
-    console.log(hotel);
   }, [id]);
 
   const [selectedHotel, setSelectedHotel] = useState([]);
   return (
     <StyledSelectedHotelContainer>
       <StyledSelectedHotel>
-        {selectedHotel.map(({ img, title, location }, index) => (
-          <StyledSelectedHotelDetails key={index}>
-            <img src={img} alt={title} />
-            <h4>{title}</h4>
-            <h5>{location}</h5>
-          </StyledSelectedHotelDetails>
-        ))}
+        {selectedHotel.map(
+          ({ img, title, location, price, features, details, rate }, index) => (
+            <StyledSelectedHotelDetails key={index}>
+              <img src={img} alt={title} />
+              <StyledSelectedHotelDetailsTitle>
+                <span>
+                  <h2>
+                    {title}
+                    <span>
+                      {rate} <FaStar />
+                    </span>
+                  </h2>
+                  <h4>
+                    <MdLocationOn /> {location}
+                  </h4>
+                </span>
+                <StyledSelectedHotelDetailsFeatures>
+                  {features}
+                </StyledSelectedHotelDetailsFeatures>
+                <StyledSelectedHotelDetailsSaveMark>
+                  <FaRegBookmark />
+                </StyledSelectedHotelDetailsSaveMark>
+                <StyledSelectedHotelDetailsPrice>
+                  {price} $
+                </StyledSelectedHotelDetailsPrice>
+              </StyledSelectedHotelDetailsTitle>
+              <p>{details}</p>
+            </StyledSelectedHotelDetails>
+          )
+        )}
         <Link to="/"> back to home</Link>
       </StyledSelectedHotel>
     </StyledSelectedHotelContainer>
