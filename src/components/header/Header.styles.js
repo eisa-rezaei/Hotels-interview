@@ -3,17 +3,17 @@ import styled from "styled-components";
 export const StyledHeader = styled.header`
   width: 100vw;
   height: 8.5vh;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   font-size: 1.7vw;
-  border-bottom: 1px solid seagreen;
+  border-bottom: 1px solid #2a608f;
   position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #fff;
   z-index: 10;
+  background-color: #fff;
   @media (max-width: 600px) {
     height: 10vh;
     justify-content: space-between;
@@ -38,14 +38,14 @@ export const StyledHeaderLinks = styled.div`
     transition: all 0.4s linear;
   }
   & a:hover {
-    color: seagreen;
+    color: #2a608f;
     background-color: #fff;
     border-bottom: 1vh solid lightblue;
     transition: all 0.2s linear;
   }
   & a:focus {
     color: #fff;
-    background-color: seagreen;
+    background-color: #2a608f;
     border-bottom: 1vh solid lightblue;
     transition: all 0.2s linear;
   }
@@ -83,7 +83,7 @@ export const StyledHeaderUserImage = styled.span`
     height: 4.5vw;
     border-radius: 50%;
     object-fit: contain;
-    border: 1px solid seagreen;
+    border: 1px solid #2a608f;
     cursor: pointer;
     @media (max-width: 600px) {
       width: 9vw;
@@ -106,28 +106,25 @@ export const StyledHeaderSideBar = styled.span`
 `;
 // sideBar container
 export const StyledSliderContainer = styled.div`
-  width: 100vw;
   top: 0;
-  height: auto;
-  position: absolute;
-  transition: all 0.25s linear;
-  font-size: 0.8rem;
   z-index: 10;
+  width: 100vw;
+  height: 100%;
+  font-size: 0.8rem;
+  position: fixed;
+  transition: all 0.25s ease-out;
   transform: ${(props) =>
-    props.isSideBarOpen ? "translate(0, 0)" : "translate(-100%, -100%)"};
+    props.isSideBarOpen ? "translate(0, 0)" : "translate(-100%, 0)"};
 `;
 // sideBar ul
 export const StyledSliderUrderList = styled.ul`
-  top: 0;
-  left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  position: absolute;
-  background-color: #263036;
+  background-color: #245480;
   font-size: 1.5em;
+  z-index: 10;
 `;
 // sideBar li
 export const StyledSliderListItem = styled.li`
@@ -140,8 +137,11 @@ export const StyledSliderListItem = styled.li`
   padding-left: 40px;
   color: #e0e0e0;
   &:hover {
-    background-color: seagreen;
+    background-color: #2a608f;
     cursor: pointer;
+  }
+  &:active {
+    color: #48adeb;
   }
 `;
 // sideBar li icon
@@ -149,12 +149,12 @@ export const StyledSliderListItemIcon = styled.span`
   display: flex;
   align-items: center;
   margin: 10px 15px;
-  color: red;
+  color: #48adeb;
 `;
 // sideBar close icon
 export const StyledSliderUrderListIcon = styled.span`
   height: 6vh;
-  color: red;
+  color: #48adeb;
   display: flex;
   font-size: 5vh;
   margin-top: 15px;

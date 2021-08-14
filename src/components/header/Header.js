@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
-import { SideBarData } from "../data/data";
+import { SideBarData } from "../../data/data";
 import {
   StyledHeader,
   StyledHeaderLinks,
@@ -16,8 +16,8 @@ import {
   StyledSliderUrderListIcon,
 } from "./Header.styles";
 
-import headerLogo from "../assets/header/header-logo.svg";
-import userImage from "../assets/header/user-image.png";
+import headerLogo from "../../assets/header/header-logo.svg";
+import userImage from "../../assets/header/user-image.png";
 
 const Header = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);

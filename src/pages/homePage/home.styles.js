@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Background from "../../assets/content/background.svg";
 
 export const StyledHomePageContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -10,8 +10,9 @@ export const StyledHomePageContainer = styled.div`
 `;
 export const StyledSearchPart = styled.div`
   width: 100%;
-  height: 45vw;
-  padding: 10vw;
+  height: 75vh;
+  margin-top: 8.5vh;
+  padding: 50px;
   background-image: url(${Background}),
     linear-gradient(
       135deg,
@@ -28,6 +29,16 @@ export const StyledSearchPart = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  & span {
+    margin: 30px 0;
+  }
+  @media (max-width: 600px) {
+    height: 55vh;
+    & span {
+      font-size: 2rem;
+      margin-top: 30px;
+    }
+  }
 `;
 export const StyledSearchPartTitle = styled.h5`
   color: #fff;
@@ -52,14 +63,19 @@ export const StyledSearchPartIcons = styled.span`
   justify-content: space-between;
   margin-top: 5vh;
   & img {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 60px;
     padding: 10px;
-    background-color: #fff;
     border-radius: 5px;
+    background-color: #e0e0e0;
     :hover {
       cursor: pointer;
-      background-color: #e0e0e0;
+      background-color: #fff;
     }
+    @media (max-width: 600px) {
+      width: 50px;
+    }
+  }
+  @media (max-width: 600px) {
+    width: 50vw;
   }
 `;

@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import SelectedHotelPage from "./pages/selectedHotelPage/SelectedHotelPage";
 import { GlobalStyle } from "./Global-Style.styles";
 import Home from "./pages/homePage/Home";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Saved from "./pages/savedPage/Saved";
 import Popular from "./pages/popularsPage/Popular";
 import Favorites from "./pages/favoritesPage/Favorites";

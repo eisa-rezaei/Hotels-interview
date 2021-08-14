@@ -9,15 +9,17 @@ import {
 import { RiSearch2Line } from "react-icons/ri";
 import Slider from "./slider-1/Slider";
 import { HomePageSearchSvg } from "../../data/data";
+import HotelsList from "./hotelsList/HotelsList";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
     <StyledHomePageContainer>
       <StyledSearchPart>
-        <StyledSearchPartTitle>
-          tell us What are you looking for.
-        </StyledSearchPartTitle>
-        <RiSearch2Line />
+        <StyledSearchPartTitle>choose your best hotel !</StyledSearchPartTitle>
+        <span>
+          <RiSearch2Line /> <RiSearch2Line />
+        </span>
         <StyledSearchPartInput placeholder="search" id="search" type="text" />
         <StyledSearchPartIcons>
           {HomePageSearchSvg.map((icon, index) => (
@@ -25,9 +27,9 @@ const Home = () => {
           ))}
         </StyledSearchPartIcons>
       </StyledSearchPart>
-      <div>
-        <Slider />
-      </div>
+      <Slider />
+      <HotelsList />
+      <Footer />
     </StyledHomePageContainer>
   );
 };
