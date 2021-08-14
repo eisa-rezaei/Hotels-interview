@@ -31,14 +31,14 @@ export const HomePageSliderOne = [
     price: 239,
     rate: 3.9,
     features: [
-      <BiSwim />,
-      <CgGym />,
-      <FaIcons.FaWifi />,
-      <IoFastFoodSharp />,
-      <IoGridOutline />,
+      <BiSwim key={1} />,
+      <CgGym key={2} />,
+      <FaIcons.FaWifi key={3} />,
+      <IoFastFoodSharp key={4} />,
+      <IoGridOutline key={5} />,
     ],
     details:
-      "Lorem ipsum dolor sitctio ducimus qui recusandae aspernatur necessitatibus veritatis in rerum numquam nob soluta ab ais! Placeat, eum doloribus quo quos ducimus iste veniam eos quas maxime, nihil dolorum? amet consectetur adipisicing elit. Vitae obcaecati totam provident eos, facilis, dicta numquam reprehenderit eveniet ipsum? Consequatur fuga eveniet, porro distin",
+      "Lorem ipsum dolor sitctio ducimus qui recusandae aspernatur necessitatibus veritatis in rerum numquam nob soluta ab ais! Placeat, eum doloribus quo quos ducimus iste veniam eos quas maxime, nihil dolorum? amet consectetur adipisicing elit. Vitae obcaecati totam provident eos, facilis, dicta numquam reprehenderit eveniet ipsum? Consequaturducimus qui recusandae aspernatur necessitatibus veritatis in rerum numquam nob soluta fuga eveniet, porro distin",
   },
   {
     title: "shine",
@@ -48,14 +48,14 @@ export const HomePageSliderOne = [
     price: 189,
     rate: 4.9,
     features: [
-      <BiSwim />,
-      <CgGym />,
-      <FaIcons.FaWifi />,
-      <IoFastFoodSharp />,
-      <IoGridOutline />,
+      <BiSwim key={1} />,
+      <CgGym key={2} />,
+      <FaIcons.FaWifi key={3} />,
+      <IoFastFoodSharp key={4} />,
+      <IoGridOutline key={5} />,
     ],
     details:
-      "s veritatis in rerum numquam nobis! Placeat, eum doloribus quo quos ducimus iste veniam eos quas maxime, niLorem ipsum dolor sit amet consectetur adipisicing elit. Vitae obcaecati totam provident eos, facilis, dicta soluta ab a numquam reprehenderit eveniet ipsum? Consequatur fuga eveniet, porro distinctio ducimus qui recusandae aspernatur necessitatibuhil dolorum?",
+      "s veritatis in rerum numquam nobis! Placeat, eum ducimus qui recusandae aspernatur necessitatibus veritatis in rerum numquam nob solutadoloribus quo quos ducimus iste veniam eos quas maxime, niLorem ipsum dolor sit amet consectetur adipisicing elit. Vitae obcaecati totam provident eos, facilis, dicta soluta ab a numquam reprehenderit eveniet ipsum? Consequatur fuga eveniet, porro distinctio ducimus qui recusandae aspernatur necessitatibuhil dolorum?",
   },
   {
     title: "sabalan",
@@ -65,14 +65,14 @@ export const HomePageSliderOne = [
     price: 370,
     rate: 3.3,
     features: [
-      <BiSwim />,
-      <CgGym />,
-      <FaIcons.FaWifi />,
-      <IoFastFoodSharp />,
-      <IoGridOutline />,
+      <BiSwim key={1} />,
+      <CgGym key={2} />,
+      <FaIcons.FaWifi key={3} />,
+      <IoFastFoodSharp key={4} />,
+      <IoGridOutline key={5} />,
     ],
     details:
-      ", facilis, dicta soluta ab a numquam reprehenderit eveniet ipsum? Consequatur fuga eveniet, porro distinctio ducimus qui recusandae aspernatur necessitatibus veritatis in rerum nuLorem ipsum dolor dolorusit amet consectetur adipisicing elit. Vitae obcaecati totam provident eosmquam nobis! Placeat, eum doloribus quo quos ducimus iste veniam eos quas maxime, nihil m?",
+      ", facilis, dicta soluta ab a numquam ducimus qui recusandae aspernatur necessitatibus veritatis in rerum numquam nob solutareprehenderit eveniet ipsum? Consequatur fuga eveniet, porro distinctio ducimus qui recusandae aspernatur necessitatibus veritatis in rerum nuLorem ipsum dolor dolorusit amet consectetur adipisicing elit. Vitae obcaecati totam provident eosmquam nobis! Placeat, eum doloribus quo quos ducimus iste veniam eos quas maxime, nihil m?",
   },
   {
     title: "damavand",
@@ -82,14 +82,14 @@ export const HomePageSliderOne = [
     price: 132,
     rate: 4.3,
     features: [
-      <BiSwim />,
-      <CgGym />,
-      <FaIcons.FaWifi />,
-      <IoFastFoodSharp />,
-      <IoGridOutline />,
+      <BiSwim key={1} />,
+      <CgGym key={2} />,
+      <FaIcons.FaWifi key={3} />,
+      <IoFastFoodSharp key={4} />,
+      <IoGridOutline key={5} />,
     ],
     details:
-      "Lorem ipsum dolor rerumis, dicta uam  numq Placeat, eum doloribus quo quos ducimus iste veniam eos quas max sit amet consectetur adipisicing elit. Vitae obcaecati totam provident eos, facilnobis!soluta ab a numquam reprehenderit eveniet ipsum? Consequatur fuga eveniet, porro distinctio ducimus qui recusandae aspernatur necessitatibus veritatis inime, nihil dolorum?",
+      "Lorem ipsum dolor rerumis, dicta uam  numq Placeat, eum doloribusducimus qui recusandae aspernatur necessitatibus veritatis in rerum numquam nob soluta quo quos ducimus iste veniam eos quas max sit amet consectetur adipisicing elit. Vitae obcaecati totam provident eos, facilnobis!soluta ab a numquam reprehenderit eveniet ipsum? Consequatur fuga eveniet, porro distinctio ducimus qui recusandae aspernatur necessitatibus veritatis inime, nihil dolorum?",
   },
 ];
 

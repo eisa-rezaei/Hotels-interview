@@ -12,6 +12,9 @@ import {
   StyledSelectedHotelDetailsFeatures,
   StyledSelectedHotelDetailsPrice,
   StyledSelectedHotelDetailsSaveMark,
+  StyledSelectedHotelFooter,
+  StyledSelectedHotelFooterButton,
+  StyledSelectedHotelFooterTitle,
 } from "./SelectedHotelPage.styles";
 
 const SelectedHotelPage = () => {
@@ -45,7 +48,8 @@ const SelectedHotelPage = () => {
                   </h4>
                 </span>
                 <StyledSelectedHotelDetailsFeatures>
-                  {features}
+                  <h3>features</h3>
+                  <span>{features}</span>
                 </StyledSelectedHotelDetailsFeatures>
                 <StyledSelectedHotelDetailsSaveMark>
                   <FaRegBookmark />
@@ -58,7 +62,18 @@ const SelectedHotelPage = () => {
             </StyledSelectedHotelDetails>
           )
         )}
-        <Link to="/"> back to home</Link>
+
+        <StyledSelectedHotelFooter>
+          <StyledSelectedHotelFooterTitle>
+            Book your hotel now
+            <span>256 $</span>
+          </StyledSelectedHotelFooterTitle>
+          <Link to="/">
+            <StyledSelectedHotelFooterButton>
+              back to home
+            </StyledSelectedHotelFooterButton>
+          </Link>
+        </StyledSelectedHotelFooter>
       </StyledSelectedHotel>
     </StyledSelectedHotelContainer>
   );
