@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { EffectFade, Pagination } from "swiper";
+import SwiperCore, { Pagination } from "swiper";
 import { HomePageSliderOne } from "../../../data/data";
 import {
   StyledSliderContainer,
@@ -17,7 +17,7 @@ import "swiper/components/effect-fade/effect-fade.scss";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 
-SwiperCore.use([Pagination, EffectFade]);
+SwiperCore.use([Pagination]);
 //, Scrollbar, Autoplay, A11y
 
 const Slider = () => {
@@ -32,14 +32,14 @@ const Slider = () => {
         }}
         // grabCursor
         centeredSlides
-        effect={"coverflow"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
+        // effect={"coverflow"}
+        // coverflowEffect={{
+        //   rotate: 50,
+        //   stretch: 0,
+        //   depth: 100,
+        //   modifier: 1,
+        //   slideShadows: true,
+        // }}
         loop
         // autoplay={5}
         slidesPerView={2}
