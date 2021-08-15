@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -10,8 +10,35 @@ import {
   StyledHotelListItemRatePart,
   StyledHotelListItemTitle,
 } from "./HotelsStyles";
+import { useDispatch } from "react-redux";
+import {
+  setFavorite,
+  removeFavorite,
+} from "../../../redux/favorites/productActions";
+import { useBooleanCheck } from "../booleanCheck";
 
 const HotelsList = () => {
+  const dispatch = useDispatch();
+  const isFavorite = useBooleanCheck();
+
+  const toggleFavoriteHandler =
+    ({ img, title, location, price, rate, id }) =>
+    () => {
+      const hotel = {
+        img,
+        title,
+        location,
+        price,
+        rate,
+        id,
+      };
+      if (!isFavorite(hotel, id)) {
+        dispatch(setFavorite(hotel));
+      }
+      if (isFavorite(hotel.id)) {
+        dispatch(removeFavorite(hotel));
+      }
+    };
   return (
     <StyledHotelListContainer>
       {HomePageSliderOne.map(
@@ -30,7 +57,29 @@ const HotelsList = () => {
               </p>
             </StyledHotelListItemTitle>
             <StyledHotelListItemRatePart>
-              <AiOutlineHeart />
+              {isFavorite(id) ? (
+                <AiFillHeart
+                  onClick={toggleFavoriteHandler({
+                    img,
+                    title,
+                    location,
+                    price,
+                    rate,
+                    id,
+                  })}
+                />
+              ) : (
+                <AiOutlineHeart
+                  onClick={toggleFavoriteHandler({
+                    img,
+                    title,
+                    location,
+                    price,
+                    rate,
+                    id,
+                  })}
+                />
+              )}
               <span>
                 {rate} <FaStar />
               </span>
