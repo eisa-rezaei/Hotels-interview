@@ -33,24 +33,24 @@ const Header = () => {
           <GiHamburgerMenu onClick={HandeltoggleSideBar()} />
         </StyledHeaderSideBar>
         <StyledHeaderLogo>
-          <Link to="/">
+          <Link to="/" replace>
             <img src={headerLogo} alt="header-logo" />
           </Link>
         </StyledHeaderLogo>
         <StyledHeaderLinks>
-          <Link to="/" key="1">
+          <Link to="/" key="1" replace>
             Home
           </Link>
-          <Link to="/favorites" key="2">
+          <Link to="/favorites" key="2" replace>
             favorites
           </Link>
-          <Link to="/saved" key="3">
+          <Link to="/saved" key="3" replace>
             saved
           </Link>
-          <Link to="/popular" key="4">
+          <Link to="/popular" key="4" replace>
             populars
           </Link>
-          <Link to="/contact" key="5">
+          <Link to="/contact" key="5" replace>
             contact
           </Link>
         </StyledHeaderLinks>
