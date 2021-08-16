@@ -35,19 +35,19 @@ export const StyledHeaderLinks = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s linear;
-  }
-  & a:hover {
-    color: #2a608f;
-    background-color: #fff;
-    border-bottom: 1vh solid lightblue;
     transition: all 0.2s linear;
-  }
-  & a:focus {
-    color: #fff;
-    background-color: #2a608f;
-    border-bottom: 1vh solid lightblue;
-    transition: all 0.2s linear;
+    :hover {
+      color: #2a608f;
+      background-color: #fff;
+      border-bottom: 1vh solid lightblue;
+      transition: all 0.2s ease-in-out;
+    }
+    :focus {
+      color: #fff;
+      background-color: #2a608f;
+      border-bottom: 1vh solid lightblue;
+      transition: all 0.2s linear;
+    }
   }
   @media (max-width: 600px) {
     & a {

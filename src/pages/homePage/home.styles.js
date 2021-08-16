@@ -62,14 +62,19 @@ export const StyledSearchPartIcons = styled.span`
   align-items: center;
   justify-content: space-between;
   margin-top: 5vh;
-  & img {
+  & svg {
     width: 60px;
+    height: 60px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #e0e0e0;
+    fill: #4e7cb3;
+    color: #4e7cb3;
+    background-color: #fff;
     :hover {
+      background-color: #4e7cb3;
       cursor: pointer;
-      background-color: #fff;
+      fill: #fff;
+      color: #fff;
     }
     @media (max-width: 600px) {
       width: 50px;

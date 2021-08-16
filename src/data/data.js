@@ -11,9 +11,9 @@ import hotel2 from "../assets/content/hotel-picture-2.jpeg";
 import hotel3 from "../assets/content/hotel-picture-3.jpeg";
 import hotel4 from "../assets/content/hotel-picture-4.jpeg";
 
-import icon1 from "../assets/search-svg/1.svg";
-import icon2 from "../assets/search-svg/2.svg";
-import icon3 from "../assets/search-svg/3.svg";
+import { ReactComponent as IconA } from "../assets/search-svg/1.svg";
+import { ReactComponent as IconB } from "../assets/search-svg/2.svg";
+import { ReactComponent as IconC } from "../assets/search-svg/3.svg";
 
 export const SideBarData = [
   { title: "Home", icon: <AiIcons.AiFillHome />, path: "/" },
@@ -93,4 +93,4 @@ export const HomePageSliderOne = [
   },
 ];
 
-export const HomePageSearchSvg = [icon1, icon2, icon3];
+export const HomePageSearchSvg = [IconA, IconB, IconC];

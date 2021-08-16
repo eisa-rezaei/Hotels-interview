@@ -15,11 +15,11 @@ import {
   setFavorite,
   removeFavorite,
 } from "../../../redux/favorites/productActions";
-import { useBooleanCheck } from "../booleanCheck";
+import { useFavoriteCheck } from "../favoriteCheck";
 
 const HotelsList = () => {
   const dispatch = useDispatch();
-  const isFavorite = useBooleanCheck();
+  const isFavorite = useFavoriteCheck();
 
   const toggleFavoriteHandler =
     ({ img, title, location, price, rate, id, details }) =>
@@ -33,7 +33,7 @@ const HotelsList = () => {
         id,
         details,
       };
-      if (!isFavorite(hotel, id)) {
+      if (!isFavorite(hotel.id)) {
         dispatch(setFavorite(hotel));
       }
       if (isFavorite(hotel.id)) {

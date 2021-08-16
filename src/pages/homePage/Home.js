@@ -11,6 +11,7 @@ import Slider from "./slider-1/Slider";
 import { HomePageSearchSvg } from "../../data/data";
 import HotelsList from "./hotelsList/HotelsList";
 import Footer from "../../components/footer/Footer";
+import { IoGridOutline } from "react-icons/io5";
 
 const Home = () => {
   return (
@@ -22,9 +23,10 @@ const Home = () => {
         </span>
         <StyledSearchPartInput placeholder="search" id="search" type="text" />
         <StyledSearchPartIcons>
-          {HomePageSearchSvg.map((icon, index) => (
-            <img src={icon} alt="icon-priture" key={index} />
+          {HomePageSearchSvg.map((Icon, index) => (
+            <Icon key={index} />
           ))}
+          <IoGridOutline />
         </StyledSearchPartIcons>
       </StyledSearchPart>
       <Slider />

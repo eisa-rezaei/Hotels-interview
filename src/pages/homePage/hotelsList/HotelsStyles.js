@@ -60,6 +60,7 @@ export const StyledHotelListItemTitle = styled.span`
     align-items: center;
     & svg {
       margin-right: 5px;
+      margin-bottom: 4px;
       color: #4e7cb3;
       font-size: 1.3rem;
     }
