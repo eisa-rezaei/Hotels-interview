@@ -4,9 +4,9 @@ const isItemFavotrie = (id) => (store) => {
   return store.favorites.favorites.some((item) => item.id === id);
 };
 
-const selecros = {
+const selectros = {
   isItemFavotrie,
   getFavorites,
 };
 
-export default selecros;
+export default selectros;

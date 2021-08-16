@@ -22,7 +22,7 @@ const HotelsList = () => {
   const isFavorite = useBooleanCheck();
 
   const toggleFavoriteHandler =
-    ({ img, title, location, price, rate, id }) =>
+    ({ img, title, location, price, rate, id, details }) =>
     () => {
       const hotel = {
         img,
@@ -31,6 +31,7 @@ const HotelsList = () => {
         price,
         rate,
         id,
+        details,
       };
       if (!isFavorite(hotel, id)) {
         dispatch(setFavorite(hotel));
@@ -42,7 +43,7 @@ const HotelsList = () => {
   return (
     <StyledHotelListContainer>
       {HomePageSliderOne.map(
-        ({ img, title, location, price, rate, id }, index) => (
+        ({ img, title, location, price, rate, id, details }, index) => (
           <StyledHotelListItem key={index}>
             <Link to={`/hotelPage/${id}`}>
               <img src={img} alt={title} />
@@ -66,6 +67,7 @@ const HotelsList = () => {
                     price,
                     rate,
                     id,
+                    details,
                   })}
                 />
               ) : (
@@ -77,6 +79,7 @@ const HotelsList = () => {
                     price,
                     rate,
                     id,
+                    details,
                   })}
                 />
               )}

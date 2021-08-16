@@ -107,14 +107,17 @@ export const StyledHotelListItemRatePart = styled.span`
   & span {
     display: flex;
     flex-direction: row;
+    align-items: center;
     & svg {
       color: orange;
       cursor: inherit;
+      margin-left: 5px;
+      padding-bottom: 4px;
     }
   }
   @media (max-width: 600px) {
     right: 3vw;
-    padding: 3vh 0;
+    padding: 2.5vh 0;
     & span {
       font-size: 1rem;
       display: flex;
