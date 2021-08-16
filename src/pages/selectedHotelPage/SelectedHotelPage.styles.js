@@ -100,16 +100,15 @@ export const StyledSelectedHotelDetailsTitle = styled.div`
   }
 `;
 export const StyledSelectedHotelDetailsFeatures = styled.div`
-  width: 30vw;
+  width: 35vw;
   & span {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
   & svg {
-    width: 6vh;
-    height: 6vh;
+    width: 5vh;
+    height: 5vh;
     font-size: 1.5rem;
     padding: 5px;
     border-radius: 5px;
@@ -129,8 +128,8 @@ export const StyledSelectedHotelDetailsFeatures = styled.div`
     margin: 10px auto;
     flex-direction: column;
     & svg {
-      width: 8vh;
-      height: 8vh;
+      width: 13vw;
+      height: 13vw;
     }
     & h3 {
       display: block;
@@ -165,6 +164,8 @@ export const StyledSelectedHotelDetailsSaveMark = styled.span`
     transition: all 0.2s linear;
   }
   @media (max-width: 600px) {
+    top: -60px;
+    right: 30px;
     width: 7.5vh;
     height: 9vh;
   }

@@ -42,7 +42,7 @@ const Saved = () => {
   return (
     <StyledSavedPageContainer>
       <StyledSavedPageItemContainer>
-        <h5>your favorite hotels :</h5>
+        <h5>your saved hotels :</h5>
 
         {saved.map(
           ({ title, img, price, rate, id, details, location }, index) => (
