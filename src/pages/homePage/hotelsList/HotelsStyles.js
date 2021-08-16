@@ -5,9 +5,9 @@ export const StyledHotelListContainer = styled.section`
   height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 15px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 15px;
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
     padding: 15px;
@@ -48,11 +48,11 @@ export const StyledHotelListItemTitle = styled.span`
   font-size: 1rem;
 
   & h5 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding-left: 5px;
   }
   & h6 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #949399;
     margin: 5px 0;
     display: flex;
@@ -74,11 +74,11 @@ export const StyledHotelListItemTitle = styled.span`
   }
   @media (max-width: 600px) {
     & h5 {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
     & h6 {
-      font-size: 0.75rem;
-      margin: 5px 0;
+      font-size: 0.8rem;
+      margin: 15px 0;
     }
     & p {
       margin: 5px 0;
@@ -120,7 +120,7 @@ export const StyledHotelListItemRatePart = styled.span`
     right: 3vw;
     padding: 2.5vh 0;
     & span {
-      font-size: 1rem;
+      font-size: 0.9rem;
       display: flex;
       flex-direction: row;
     }

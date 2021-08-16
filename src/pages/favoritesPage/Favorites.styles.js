@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import background from "../../assets/background/pages-background.svg";
 
 // page container
 export const StyledFavoritesPageContainer = styled.div`
@@ -10,6 +11,9 @@ export const StyledFavoritesPageContainer = styled.div`
   justify-content: center;
   padding: 12vh 0;
   font-size: 5vw;
+  background: url(${background});
+  background-position: fixed;
+  background-size: cover;
 `;
 // favorites container
 export const StyledFavoritesPageItemContainer = styled.section`
@@ -20,7 +24,6 @@ export const StyledFavoritesPageItemContainer = styled.section`
 //single item
 export const StyledFavoritesPageItem = styled.article`
   width: 100%;
-  min-height: 30vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,7 +36,7 @@ export const StyledFavoritesPageItem = styled.article`
   position: relative;
   & img {
     width: 35vw;
-    height: 44vh;
+    height: 38vh;
     object-fit: cover;
   }
   & a {
@@ -41,8 +44,9 @@ export const StyledFavoritesPageItem = styled.article`
     align-items: center;
   }
   :hover {
+    background-color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s linear;
+    transition: all 0.3s linear;
   }
   @media (max-width: 700px) {
     min-height: auto;
@@ -63,7 +67,7 @@ export const StyledFavoritesPageItemTitle = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   & p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #444349;
     margin: 10px 0;
     & a {
@@ -71,15 +75,14 @@ export const StyledFavoritesPageItemTitle = styled.div`
       display: inline;
       color: seagreen;
       margin: 5px 0;
-      font-size: 1rem;
     }
   }
   & h4 {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
   & h5 {
     color: #949399;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin: 5px 0;
     padding-bottom: 2px;
     display: flex;
@@ -87,7 +90,7 @@ export const StyledFavoritesPageItemTitle = styled.div`
     align-items: center;
     & svg {
       color: #4e7cb3;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       margin-right: 10px;
     }
   }
@@ -99,16 +102,16 @@ export const StyledFavoritesPageItemTitle = styled.div`
     }
   }
   @media (max-width: 700px) {
-    margin-left: 5vw;
+    margin-left: 4vw;
     & p {
       display: none;
     }
     & h4 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
     & h5 {
       width: 9rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       margin: 15px 0;
     }
     & h6 {
@@ -135,7 +138,7 @@ export const StyledFavoritesPageItemRate = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     & svg {
       color: orange;
       margin-bottom: 5px;

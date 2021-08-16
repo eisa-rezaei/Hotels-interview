@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { MdLocationOn } from "react-icons/md";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import {
   StyledFavoritesPageContainer,
@@ -59,7 +59,7 @@ const Favorites = () => {
                   <MdLocationOn /> {location}
                 </h5>
                 <p>
-                  {`${details.substring(0, 150)}... `}
+                  {`${details.substring(0, 180)}... `}
                   <Link to={`hotelpage/${id}`}> show more </Link>
                 </p>
                 <h6>
@@ -67,31 +67,17 @@ const Favorites = () => {
                   <span>/night</span>
                 </h6>
                 <StyledFavoritesPageItemRate>
-                  {isFavorite(id) ? (
-                    <AiFillHeart
-                      onClick={toggleFavoriteHandler({
-                        img,
-                        title,
-                        location,
-                        price,
-                        rate,
-                        id,
-                        details,
-                      })}
-                    />
-                  ) : (
-                    <AiOutlineHeart
-                      onClick={toggleFavoriteHandler({
-                        img,
-                        title,
-                        location,
-                        price,
-                        rate,
-                        id,
-                        details,
-                      })}
-                    />
-                  )}
+                  <AiFillHeart
+                    onClick={toggleFavoriteHandler({
+                      img,
+                      title,
+                      location,
+                      price,
+                      rate,
+                      id,
+                      details,
+                    })}
+                  />
                   <span>
                     {rate}
                     <FaStar />

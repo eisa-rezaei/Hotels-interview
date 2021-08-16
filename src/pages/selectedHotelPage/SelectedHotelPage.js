@@ -37,22 +37,36 @@ const SelectedHotelPage = () => {
   const dispatch = useDispatch();
 
   const toggleSavedHandler =
-    ({ img, title, location, price, features, details, rate }) =>
+    ({ img, title, location, price, features, details, rate, id }) =>
     () => {
-      const hotel = { img, title, location, price, features, details, rate };
+      const hotel = {
+        img,
+        title,
+        location,
+        price,
+        features,
+        details,
+        rate,
+        id,
+      };
       if (!isSaved(id)) {
         dispatch(setSaved(hotel));
       }
       if (isSaved(id)) {
-        dispatch(removeSaved(hotel.id));
+        dispatch(removeSaved(hotel));
       }
+      setIsHotelSaved(!isSaved(id));
     };
+  const [isHotelSaved, setIsHotelSaved] = useState();
 
   return (
     <StyledSelectedHotelContainer>
       <StyledSelectedHotel>
         {selectedHotel.map(
-          ({ img, title, location, price, features, details, rate }, index) => (
+          (
+            { img, title, location, price, features, details, rate, id },
+            index
+          ) => (
             <StyledSelectedHotelDetails key={index}>
               <img src={img} alt={title} />
               <StyledSelectedHotelDetailsTitle>
@@ -71,18 +85,20 @@ const SelectedHotelPage = () => {
                   <h3>features</h3>
                   <span>{features}</span>
                 </StyledSelectedHotelDetailsFeatures>
-                <StyledSelectedHotelDetailsSaveMark>
-                  <FaRegBookmark
-                    onClick={toggleSavedHandler({
-                      img,
-                      title,
-                      location,
-                      price,
-                      features,
-                      details,
-                      rate,
-                    })}
-                  />
+                <StyledSelectedHotelDetailsSaveMark
+                  isSaved={isHotelSaved}
+                  onClick={toggleSavedHandler({
+                    img,
+                    title,
+                    location,
+                    price,
+                    features,
+                    details,
+                    rate,
+                    id,
+                  })}
+                >
+                  <FaRegBookmark />
                 </StyledSelectedHotelDetailsSaveMark>
                 <StyledSelectedHotelDetailsPrice>
                   {price} $

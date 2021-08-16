@@ -156,7 +156,7 @@ export const StyledSelectedHotelDetailsSaveMark = styled.span`
   position: absolute;
   align-items: center;
   justify-content: center;
-  background-color: #6284f2;
+  background-color: ${(props) => (props.isSaved ? `seagreen` : `#6284f2`)};
   transition: all 0.2s linear;
   :hover {
     cursor: pointer;
