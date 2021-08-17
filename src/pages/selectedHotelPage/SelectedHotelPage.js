@@ -24,12 +24,12 @@ import { useSavedCheck } from "./savedCheck";
 const SelectedHotelPage = () => {
   const { id } = useParams();
   const saved = useSelector((state) => state.saved.saved);
-  console.log(saved);
   useEffect(() => {
     const hotel = HomePageSliderOne.filter(
       (hotel) => hotel.id === parseInt(id)
     );
     setSelectedHotel(hotel);
+    setIsHotelSaved(!isSaved(id));
   }, [id]);
   const [selectedHotel, setSelectedHotel] = useState([]);
 

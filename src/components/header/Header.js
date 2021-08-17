@@ -21,9 +21,34 @@ import userImage from "../../assets/header/user-image.png";
 
 const Header = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [navbarBg, setNavbarBg] = useState({
+    isHome: true,
+    isFavorite: false,
+    isSaved: false,
+    isPopular: false,
+    isContact: false,
+  });
 
   const HandeltoggleSideBar = () => () => {
     setIsSideBarOpen(!isSideBarOpen);
+  };
+
+  const HandleNavLinkProp = () => {
+    if (navbarBg.isHome) {
+      return "nav-link-home";
+    }
+    if (navbarBg.isFavorite) {
+      return "nav-link-favorite";
+    }
+    if (navbarBg.isPopular) {
+      return "nav-link-popular";
+    }
+    if (navbarBg.isSaved) {
+      return "nav-link-saved";
+    }
+    if (navbarBg.isContact) {
+      return "nav-link-contact";
+    }
   };
 
   return (
@@ -37,20 +62,90 @@ const Header = () => {
             <img src={headerLogo} alt="header-logo" />
           </Link>
         </StyledHeaderLogo>
-        <StyledHeaderLinks>
-          <Link to="/" key="1" replace>
+        <StyledHeaderLinks isLink={HandleNavLinkProp()}>
+          <Link
+            to="/"
+            key="1"
+            id="nav-link-home"
+            replace
+            onClick={() =>
+              setNavbarBg({
+                isHome: true,
+                isFavorite: false,
+                isSaved: false,
+                isPopular: false,
+                isContact: false,
+              })
+            }
+          >
             Home
           </Link>
-          <Link to="/favorites" key="2" replace>
+          <Link
+            to="/favorites"
+            key="2"
+            id="nav-link-favorite"
+            replace
+            onClick={() =>
+              setNavbarBg({
+                isHome: false,
+                isFavorite: true,
+                isSaved: false,
+                isPopular: false,
+                isContact: false,
+              })
+            }
+          >
             favorites
           </Link>
-          <Link to="/saved" key="3" replace>
+          <Link
+            to="/saved"
+            key="3"
+            id="nav-link-saved"
+            replace
+            onClick={() =>
+              setNavbarBg({
+                isHome: false,
+                isFavorite: false,
+                isSaved: true,
+                isPopular: false,
+                isContact: false,
+              })
+            }
+          >
             saved
           </Link>
-          <Link to="/popular" key="4" replace>
+          <Link
+            to="/popular"
+            key="4"
+            id="nav-link-popular"
+            replace
+            onClick={() =>
+              setNavbarBg({
+                isHome: false,
+                isFavorite: false,
+                isSaved: false,
+                isPopular: true,
+                isContact: false,
+              })
+            }
+          >
             populars
           </Link>
-          <Link to="/contact" key="5" replace>
+          <Link
+            to="/contact"
+            key="5"
+            id="nav-link-contact"
+            replace
+            onClick={() =>
+              setNavbarBg({
+                isHome: false,
+                isFavorite: false,
+                isSaved: false,
+                isPopular: false,
+                isContact: true,
+              })
+            }
+          >
             contact
           </Link>
         </StyledHeaderLinks>
