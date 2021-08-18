@@ -13,7 +13,6 @@ export const StyledSliderContainer = styled.div`
     rgba(188, 212, 249, 1) 80%
   );
   padding: 4vh 0;
-  border-top: 20px solid #fff;
 `;
 export const StyledSliderSingleItem = styled.div`
   width: 48vw;

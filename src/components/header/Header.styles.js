@@ -14,7 +14,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   z-index: 10;
   background-color: #fff;
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     height: 10vh;
     justify-content: space-between;
     padding: 0 1.5rem;

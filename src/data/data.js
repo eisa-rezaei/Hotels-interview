@@ -19,7 +19,7 @@ export const SideBarData = [
   { title: "Home", icon: <AiIcons.AiFillHome />, path: "/" },
   { title: "favorites", icon: <IoIcons.IoIosPaper />, path: "/favorites" },
   { title: "saved", icon: <FaIcons.FaCartPlus />, path: "/saved" },
-  { title: "populars", icon: <IoIcons.IoMdPeople />, path: "/popular" },
+  { title: "Locations", icon: <IoIcons.IoMdPeople />, path: "/locations" },
   { title: "contact", icon: <FaIcons.FaEnvelopeOpenText />, path: "/contact" },
 ];
 export const HomePageSliderOne = [

@@ -11,13 +11,29 @@ export const StyledFooterContainer = styled.footer`
 `;
 export const StyledFooterContainerCopyRight = styled.div`
   width: 100%;
-  height: 10vh;
+  height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #316ea7;
   color: #fff;
   & h2 {
-    font-size: 3vw;
+    font-size: 2.5vw;
+  }
+  & span {
+    & a {
+      color: #fff;
+    }
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    & svg {
+      font-size: 2.5vw;
+      :hover {
+        color: #d0d0d0;
+        cursor: pointer;
+      }
+    }
   }
 `;
