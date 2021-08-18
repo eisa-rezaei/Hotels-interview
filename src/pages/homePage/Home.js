@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { RiSearch2Line } from "react-icons/ri";
+import { FaStar } from "react-icons/fa";
+import { IoGridOutline } from "react-icons/io5";
 import {
   StyledHomePageContainer,
   StyledSearchPart,
   StyledSearchPartIcons,
   StyledSearchPartInput,
+  StyledSearchPartResultsli,
+  StyledSearchPartResultsUl,
   StyledSearchPartTitle,
 } from "./home.styles";
-import { RiSearch2Line } from "react-icons/ri";
+import { HomePageSearchSvg, HomePageSliderOne } from "../../data/data";
 import Slider from "./slider-1/Slider";
-import { HomePageSearchSvg } from "../../data/data";
 import HotelsList from "./hotelsList/HotelsList";
 import Footer from "../../components/footer/Footer";
-import { IoGridOutline } from "react-icons/io5";
 
 const Home = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const hotelSearchHandler = (e) => {
+    const value = e.target.value;
+    setSearchValue(value);
+  };
+
+  const hotel = HomePageSliderOne.filter((hotel) => {
+    if (searchValue === "") {
+      return [];
+    } else if (hotel.title.toLowerCase().includes(searchValue.toLowerCase())) {
+      return hotel;
+    } else {
+      return false;
+    }
+  });
+
   return (
     <StyledHomePageContainer>
       <StyledSearchPart>
@@ -21,7 +40,25 @@ const Home = () => {
         <span>
           <RiSearch2Line /> <RiSearch2Line />
         </span>
-        <StyledSearchPartInput placeholder="search" id="search" type="text" />
+        <StyledSearchPartInput
+          placeholder="search"
+          id="search"
+          type="text"
+          onChange={(e) => hotelSearchHandler(e)}
+        />
+        <StyledSearchPartResultsUl isOpen={searchValue}>
+          {hotel.map((hotel) => {
+            return (
+              <StyledSearchPartResultsli key={hotel.id}>
+                <p>{hotel.title}</p>
+                <span>
+                  {hotel.rate}
+                  <FaStar />
+                </span>
+              </StyledSearchPartResultsli>
+            );
+          })}
+        </StyledSearchPartResultsUl>
         <StyledSearchPartIcons>
           {HomePageSearchSvg.map((Icon, index) => (
             <Icon key={index} />

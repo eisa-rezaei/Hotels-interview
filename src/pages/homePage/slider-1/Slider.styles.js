@@ -6,12 +6,7 @@ export const StyledSliderContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    320deg,
-    rgba(255, 255, 255, 1) 20%,
-    rgba(188, 212, 249, 1) 80%
-  );
+  background: rgba(119, 150, 196, 1);
   padding: 4vh 0;
 `;
 export const StyledSliderSingleItem = styled.div`
@@ -20,12 +15,7 @@ export const StyledSliderSingleItem = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 1) 20%,
-    rgba(119, 150, 196, 1) 80%
-  );
+  background: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   & img {
     width: 100%;
@@ -38,7 +28,6 @@ export const StyledSliderSingleItem = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: #fff;
     & svg {
       color: #4e7cb3;
       margin-right: 10px;

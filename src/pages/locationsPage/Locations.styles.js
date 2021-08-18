@@ -9,7 +9,7 @@ export const LocationPageContainer = styled.div`
   align-items: center;
   justify-content: center;
   & img {
-    width: 15vw;
+    width: 18vw;
     height: 15vh;
     display: block;
     margin: 5px 0;
@@ -57,7 +57,7 @@ export const LocationPageRateAndPrice = styled.div`
 export const StyledLocationPageHotelInfoContainer = styled.div`
   top: 8.5vh;
   right: 0;
-  width: 40%;
+  width: 43%;
   height: 91.5vh;
   position: absolute;
   background-color: #fff;

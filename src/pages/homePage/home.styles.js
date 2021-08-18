@@ -19,16 +19,14 @@ export const StyledSearchPart = styled.div`
       rgba(253, 252, 254, 0) 20%,
       rgba(192, 192, 192, 0.8132440476190477) 100%
     );
-  top: 0;
-  left: 0;
   z-index: 2;
-  position: sticky;
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   & span {
     margin: 30px 0;
   }
@@ -50,23 +48,75 @@ export const StyledSearchPartInput = styled.input`
   height: 6vh;
   outline: none;
   padding: 20px;
-  margin: 20px auto;
   border-radius: 30px;
   font-size: 2vw;
+  position: absolute;
+  top: 350px;
   background-color: #f3f6fe;
+  z-index: 2;
   @media (max-width: 600px) {
     width: 70vw;
     font-size: 4vw;
+    top: 220px;
   }
 `;
-export const StyledSearchPartIcons = styled.span`
-  width: 40vw;
-  height: 10vh;
+export const StyledSearchPartResultsUl = styled.ul`
+  width: 50vw;
+  height: ${(props) => (props.isOpen ? `auto` : `0`)};
+  visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
+  max-height: 45vh;
+  top: 350px;
+  z-index: 1;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 30px;
+  padding-top: 5vh;
+  overflow: hidden;
+  text-align: center;
+  @media (max-width: 600px) {
+    top: 2200px;
+    width: 70vw;
+  }
+`;
+export const StyledSearchPartResultsli = styled.li`
+  width: 100%;
+  height: 8vh;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
+  padding: 0 10px;
+  & span {
+    width: 6vw;
+    display: flex;
+    justify-content: space-between;
+    & svg {
+      color: orange;
+    }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    font-size: 4vw;
+    & span {
+      width: 10vw;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      & svg {
+        color: orange;
+      }
+    }
+  }
+`;
+export const StyledSearchPartIcons = styled.span`
+  width: 40vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   & svg {
     width: 6vw;
     height: 7vh;
