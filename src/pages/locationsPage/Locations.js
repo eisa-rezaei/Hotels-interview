@@ -47,9 +47,16 @@ const Locations = () => {
     ];
     return newPosition;
   };
+  const handlColsingSideBar = () => {
+    if (hotelInfo) {
+      return setHotelInfo(false);
+    } else {
+      return [];
+    }
+  };
 
   return (
-    <LocationPageContainer>
+    <LocationPageContainer onClick={handlColsingSideBar}>
       <MapContainer
         center={centerPositionFinder()}
         zoom={11}
