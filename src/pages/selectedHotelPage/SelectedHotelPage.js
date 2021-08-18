@@ -22,17 +22,21 @@ import { useSavedCheck } from "./savedCheck";
 
 const SelectedHotelPage = () => {
   const { id } = useParams();
-  const isSaved = useSavedCheck();
+
   const dispatch = useDispatch();
   const [selectedHotel, setSelectedHotel] = useState([]);
-  const [isHotelSaved, setIsHotelSaved] = useState();
+  const isSaved = useSavedCheck();
+  const isThisSaved = isSaved(parseInt(id));
+
   useEffect(() => {
     const hotel = HomePageSliderOne.filter(
       (hotel) => hotel.id === parseInt(id)
     );
     setSelectedHotel(hotel);
-    setIsHotelSaved(isSaved(hotel.id));
-  }, [id, isSaved]);
+    setIsHotelSaved(isThisSaved);
+  }, [id, isThisSaved]);
+
+  const [isHotelSaved, setIsHotelSaved] = useState();
 
   const toggleSavedHandler =
     ({ img, title, location, price, features, details, rate, id }) =>
@@ -49,11 +53,12 @@ const SelectedHotelPage = () => {
       };
       if (!isSaved(id)) {
         dispatch(setSaved(hotel));
+        setIsHotelSaved(true);
       }
       if (isSaved(id)) {
         dispatch(removeSaved(hotel));
+        setIsHotelSaved(false);
       }
-      setIsHotelSaved(!isSaved(id));
     };
 
   return (
