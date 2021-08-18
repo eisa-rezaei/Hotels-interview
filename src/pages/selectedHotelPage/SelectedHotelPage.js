@@ -18,12 +18,13 @@ import {
   StyledSelectedHotelFooterTitle,
 } from "./SelectedHotelPage.styles";
 import { removeSaved, setSaved } from "../../redux/saved/productActions";
-import { useSelector } from "react-redux";
 import { useSavedCheck } from "./savedCheck";
 
 const SelectedHotelPage = () => {
   const { id } = useParams();
-  const saved = useSelector((state) => state.saved.saved);
+  const isSaved = useSavedCheck();
+  const dispatch = useDispatch();
+  const [selectedHotel, setSelectedHotel] = useState([]);
   useEffect(() => {
     const hotel = HomePageSliderOne.filter(
       (hotel) => hotel.id === parseInt(id)
@@ -31,10 +32,6 @@ const SelectedHotelPage = () => {
     setSelectedHotel(hotel);
     setIsHotelSaved(!isSaved(id));
   }, [id]);
-  const [selectedHotel, setSelectedHotel] = useState([]);
-
-  const isSaved = useSavedCheck();
-  const dispatch = useDispatch();
 
   const toggleSavedHandler =
     ({ img, title, location, price, features, details, rate, id }) =>
@@ -86,7 +83,6 @@ const SelectedHotelPage = () => {
                   <span>{features}</span>
                 </StyledSelectedHotelDetailsFeatures>
                 <StyledSelectedHotelDetailsSaveMark
-                  isSaved={isHotelSaved}
                   onClick={toggleSavedHandler({
                     img,
                     title,
@@ -97,6 +93,7 @@ const SelectedHotelPage = () => {
                     rate,
                     id,
                   })}
+                  isSaved={isHotelSaved}
                 >
                   <FaRegBookmark />
                 </StyledSelectedHotelDetailsSaveMark>

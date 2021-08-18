@@ -25,7 +25,7 @@ const Header = () => {
     isHome: true,
     isFavorite: false,
     isSaved: false,
-    isPopular: false,
+    isLocation: false,
     isContact: false,
   });
 
@@ -40,8 +40,8 @@ const Header = () => {
     if (navbarBg.isFavorite) {
       return "nav-link-favorite";
     }
-    if (navbarBg.isPopular) {
-      return "nav-link-popular";
+    if (navbarBg.isLocation) {
+      return "nav-link-location";
     }
     if (navbarBg.isSaved) {
       return "nav-link-saved";
@@ -73,7 +73,7 @@ const Header = () => {
                 isHome: true,
                 isFavorite: false,
                 isSaved: false,
-                isPopular: false,
+                isLocation: false,
                 isContact: false,
               })
             }
@@ -90,7 +90,7 @@ const Header = () => {
                 isHome: false,
                 isFavorite: true,
                 isSaved: false,
-                isPopular: false,
+                isLocation: false,
                 isContact: false,
               })
             }
@@ -107,7 +107,7 @@ const Header = () => {
                 isHome: false,
                 isFavorite: false,
                 isSaved: true,
-                isPopular: false,
+                isLocation: false,
                 isContact: false,
               })
             }
@@ -115,21 +115,21 @@ const Header = () => {
             saved
           </Link>
           <Link
-            to="/popular"
+            to="/locations"
             key="4"
-            id="nav-link-popular"
+            id="nav-link-location"
             replace
             onClick={() =>
               setNavbarBg({
                 isHome: false,
                 isFavorite: false,
                 isSaved: false,
-                isPopular: true,
+                isLocation: true,
                 isContact: false,
               })
             }
           >
-            populars
+            locations
           </Link>
           <Link
             to="/contact"
@@ -141,7 +141,7 @@ const Header = () => {
                 isHome: false,
                 isFavorite: false,
                 isSaved: false,
-                isPopular: false,
+                isLocations: false,
                 isContact: true,
               })
             }
