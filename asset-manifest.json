@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Hotels-interview/static/js/main.421b2699.chunk.js",
-    "main.js.map": "/Hotels-interview/static/js/main.421b2699.chunk.js.map",
+    "main.js": "/Hotels-interview/static/js/main.d1c8aa6d.chunk.js",
+    "main.js.map": "/Hotels-interview/static/js/main.d1c8aa6d.chunk.js.map",
     "runtime-main.js": "/Hotels-interview/static/js/runtime-main.23439406.js",
     "runtime-main.js.map": "/Hotels-interview/static/js/runtime-main.23439406.js.map",
     "static/css/2.69361542.chunk.css": "/Hotels-interview/static/css/2.69361542.chunk.css",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.23439406.js",
     "static/css/2.69361542.chunk.css",
     "static/js/2.01268fd9.chunk.js",
-    "static/js/main.421b2699.chunk.js"
+    "static/js/main.d1c8aa6d.chunk.js"
   ]
 }
