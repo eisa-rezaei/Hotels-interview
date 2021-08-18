@@ -25,14 +25,14 @@ const SelectedHotelPage = () => {
   const isSaved = useSavedCheck();
   const dispatch = useDispatch();
   const [selectedHotel, setSelectedHotel] = useState([]);
+  const [isHotelSaved, setIsHotelSaved] = useState();
   useEffect(() => {
     const hotel = HomePageSliderOne.filter(
       (hotel) => hotel.id === parseInt(id)
     );
     setSelectedHotel(hotel);
-    setIsHotelSaved(!isSaved(id));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id, isSaved()]);
+    setIsHotelSaved(isSaved(hotel.id));
+  }, [id, isSaved]);
 
   const toggleSavedHandler =
     ({ img, title, location, price, features, details, rate, id }) =>
@@ -55,7 +55,6 @@ const SelectedHotelPage = () => {
       }
       setIsHotelSaved(!isSaved(id));
     };
-  const [isHotelSaved, setIsHotelSaved] = useState();
 
   return (
     <StyledSelectedHotelContainer>
