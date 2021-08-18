@@ -6,12 +6,11 @@ export const StyledSliderContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: rgb(188, 212, 240);
+  background: rgb(255, 255, 255);
   background: linear-gradient(
-    -45deg,
-    rgba(188, 212, 240, 1) 15%,
-    rgba(148, 187, 233, 1) 49%,
-    rgba(52, 119, 179, 1) 85%
+    320deg,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(188, 212, 249, 1) 80%
   );
   padding: 4vh 0;
   border-top: 20px solid #fff;
@@ -22,7 +21,12 @@ export const StyledSliderSingleItem = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #f3f6fe;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(119, 150, 196, 1) 80%
+  );
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   & img {
     width: 100%;
@@ -30,6 +34,16 @@ export const StyledSliderSingleItem = styled.div`
     object-fit: fill;
     cursor: inherit;
     z-index: 1;
+  }
+  & h6 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+    & svg {
+      color: #4e7cb3;
+      margin-right: 10px;
+    }
   }
 `;
 export const StyledSliderSingleItemPagination = styled.span`

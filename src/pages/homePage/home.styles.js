@@ -12,7 +12,7 @@ export const StyledSearchPart = styled.div`
   width: 100%;
   height: 75vh;
   margin-top: 8.5vh;
-  padding: 50px;
+  padding: 50px 0 0 0;
   background-image: url(${Background}),
     linear-gradient(
       135deg,
@@ -33,6 +33,7 @@ export const StyledSearchPart = styled.div`
     margin: 30px 0;
   }
   @media (max-width: 600px) {
+    margin-top: 10vh;
     height: 55vh;
     & span {
       font-size: 2rem;
@@ -49,33 +50,44 @@ export const StyledSearchPartInput = styled.input`
   height: 6vh;
   outline: none;
   padding: 20px;
-  margin-top: 3vh;
+  margin: 20px auto;
   border-radius: 30px;
-  font-size: 1rem;
-  background-color: #e0e0e0;
+  font-size: 2vw;
+  background-color: #f3f6fe;
+  @media (max-width: 600px) {
+    width: 70vw;
+    font-size: 4vw;
+  }
 `;
 export const StyledSearchPartIcons = styled.span`
-  width: 30vw;
+  width: 40vw;
   height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 5vh;
-  & img {
-    width: 60px;
+
+  & svg {
+    width: 6vw;
+    height: 7vh;
     padding: 10px;
     border-radius: 5px;
-    background-color: #e0e0e0;
+    fill: #4e7cb3;
+    color: #4e7cb3;
+    background-color: #fff;
     :hover {
+      background-color: #4e7cb3;
       cursor: pointer;
-      background-color: #fff;
-    }
-    @media (max-width: 600px) {
-      width: 50px;
+      fill: #fff;
+      color: #fff;
     }
   }
   @media (max-width: 600px) {
-    width: 50vw;
+    width: 60vw;
+    & svg {
+      width: 10vw;
+      height: 6vh;
+      padding: 5px;
+    }
   }
 `;

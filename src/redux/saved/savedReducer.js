@@ -1,14 +1,18 @@
 import { ActionTypes } from "./action-types";
 
-const savedInitialState = [];
+const savedInitialState = {
+  saved: [],
+};
 
 export const savedReducer = (state = savedInitialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_SAVED:
-      return [...state, payload];
+      return { ...state, saved: [...state.saved, payload] };
     case ActionTypes.REMOVE_SAVED:
-      const newState2 = state.filter((item) => item.id !== payload.id);
-      return [newState2];
+      return {
+        ...state,
+        saved: state.saved.filter((item) => item.id !== payload.id),
+      };
     default:
       return state;
   }
