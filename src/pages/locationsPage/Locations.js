@@ -6,7 +6,6 @@ import {
   LocationPageRateAndPrice,
   StyledLocationPageHotelFeatures,
   StyledLocationPageHotelFooter,
-  StyledLocationPageHotelFooterButton,
   StyledLocationPageHotelFooterTitle,
   StyledLocationPageHotelInfoContainer,
   StyledLocationPageHotelPrice,

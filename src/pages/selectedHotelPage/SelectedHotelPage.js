@@ -31,7 +31,8 @@ const SelectedHotelPage = () => {
     );
     setSelectedHotel(hotel);
     setIsHotelSaved(!isSaved(id));
-  }, [id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, isSaved()]);
 
   const toggleSavedHandler =
     ({ img, title, location, price, features, details, rate, id }) =>
