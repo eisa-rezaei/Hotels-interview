@@ -24,7 +24,7 @@ export const LocationPageContainer = styled.div`
   @media (max-width: 600px) {
     margin-top: 9.9vh;
     & img {
-      width: 30vw;
+      width: 40vw;
     }
   }
   .leaflet-container {

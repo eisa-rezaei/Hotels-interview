@@ -12,7 +12,7 @@ export const StyledSearchPart = styled.div`
   width: 100%;
   height: 75vh;
   margin-top: 8.5vh;
-  padding: 50px 0 0 0;
+  padding: 75px 0 0 0;
   background-image: url(${Background}),
     linear-gradient(
       135deg,
@@ -45,19 +45,20 @@ export const StyledSearchPartTitle = styled.h5`
 
 export const StyledSearchPartInput = styled.input`
   width: 50vw;
-  height: 6vh;
+  height: 7vh;
   outline: none;
-  padding: 20px;
+  padding-left: 20px;
   border-radius: 30px;
   font-size: 2vw;
   position: absolute;
-  top: 350px;
+  top: 330px;
   background-color: #f3f6fe;
   z-index: 2;
   @media (max-width: 600px) {
     width: 70vw;
+    height: 6vh;
     font-size: 4vw;
-    top: 220px;
+    top: 250px;
   }
 `;
 export const StyledSearchPartResultsUl = styled.ul`
@@ -65,16 +66,18 @@ export const StyledSearchPartResultsUl = styled.ul`
   height: ${(props) => (props.isOpen ? `auto` : `0`)};
   visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
   max-height: 45vh;
-  top: 350px;
+  top: 335px;
   z-index: 1;
   position: absolute;
   background-color: #fff;
   border-radius: 30px;
   padding-top: 5vh;
   overflow: hidden;
-  text-align: center;
+  a {
+    color: #222;
+  }
   @media (max-width: 600px) {
-    top: 2200px;
+    top: 250px;
     width: 70vw;
   }
 `;
@@ -89,15 +92,20 @@ export const StyledSearchPartResultsli = styled.li`
   justify-content: space-between;
   padding: 0 10px;
   & span {
-    width: 6vw;
+    width: 5vw;
     display: flex;
     justify-content: space-between;
     & svg {
       color: orange;
     }
   }
+  :hover {
+    background-color: #f3f6fe;
+    cursor: pointer;
+  }
   @media (max-width: 600px) {
     width: 100%;
+    height: 6vh;
     font-size: 4vw;
     & span {
       width: 10vw;
@@ -110,34 +118,38 @@ export const StyledSearchPartResultsli = styled.li`
     }
   }
 `;
-export const StyledSearchPartIcons = styled.span`
+export const StyledSearchPartIcons = styled.div`
   width: 40vw;
   height: 15vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    width: 60vw;
+  }
+`;
+export const StyledSearchPartIcon = styled.span`
   & svg {
     width: 6vw;
     height: 7vh;
     padding: 10px;
     border-radius: 5px;
-    fill: #4e7cb3;
-    color: #4e7cb3;
-    background-color: #fff;
+    fill: #fff;
+    color: #fff;
+    background-color: ${(props) => props.color};
     :hover {
-      background-color: #4e7cb3;
+      background-color: #fff;
       cursor: pointer;
-      fill: #fff;
-      color: #fff;
+      fill: ${(props) => props.color};
+      color: ${(props) => props.color};
     }
   }
   @media (max-width: 600px) {
-    width: 60vw;
     & svg {
       width: 10vw;
       height: 6vh;
-      padding: 5px;
+      padding: 12px;
     }
   }
 `;

@@ -5,6 +5,7 @@ import { IoGridOutline } from "react-icons/io5";
 import {
   StyledHomePageContainer,
   StyledSearchPart,
+  StyledSearchPartIcon,
   StyledSearchPartIcons,
   StyledSearchPartInput,
   StyledSearchPartResultsli,
@@ -15,6 +16,7 @@ import { HomePageSearchSvg, HomePageSliderOne } from "../../data/data";
 import Slider from "./slider-1/Slider";
 import HotelsList from "./hotelsList/HotelsList";
 import Footer from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -49,21 +51,27 @@ const Home = () => {
         <StyledSearchPartResultsUl isOpen={searchValue}>
           {hotel.map((hotel) => {
             return (
-              <StyledSearchPartResultsli key={hotel.id}>
-                <p>{hotel.title}</p>
-                <span>
-                  {hotel.rate}
-                  <FaStar />
-                </span>
-              </StyledSearchPartResultsli>
+              <Link key={hotel.id} to={`hotelpage/${hotel.id}`}>
+                <StyledSearchPartResultsli>
+                  <p>{hotel.title}</p>
+                  <span>
+                    {hotel.rate}
+                    <FaStar />
+                  </span>
+                </StyledSearchPartResultsli>
+              </Link>
             );
           })}
         </StyledSearchPartResultsUl>
         <StyledSearchPartIcons>
-          {HomePageSearchSvg.map((Icon, index) => (
-            <Icon key={index} />
+          {HomePageSearchSvg.map((icon, index) => (
+            <StyledSearchPartIcon key={index} color={icon.color}>
+              <icon.Icon />
+            </StyledSearchPartIcon>
           ))}
-          <IoGridOutline />
+          <StyledSearchPartIcon color="#f0925e">
+            <IoGridOutline />
+          </StyledSearchPartIcon>
         </StyledSearchPartIcons>
       </StyledSearchPart>
       <Slider />
