@@ -107,9 +107,8 @@ export const StyledSelectedHotelDetailsFeatures = styled.div`
     justify-content: space-between;
   }
   & svg {
-    width: 5vh;
-    height: 5vh;
-    font-size: 1.5rem;
+    width: 6vh;
+    height: 6vh;
     padding: 5px;
     border-radius: 5px;
     color: #fff;
@@ -164,7 +163,7 @@ export const StyledSelectedHotelDetailsSaveMark = styled.span`
     transition: all 0.2s linear;
   }
   @media (max-width: 600px) {
-    top: -60px;
+    top: -40px;
     right: 30px;
     width: 7.5vh;
     height: 9vh;

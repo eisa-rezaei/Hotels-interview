@@ -18,23 +18,25 @@ import {
   StyledSelectedHotelFooterTitle,
 } from "./SelectedHotelPage.styles";
 import { removeSaved, setSaved } from "../../redux/saved/productActions";
-import { useSelector } from "react-redux";
 import { useSavedCheck } from "./savedCheck";
 
 const SelectedHotelPage = () => {
   const { id } = useParams();
-  const saved = useSelector((state) => state.saved.saved);
-  console.log(saved);
+
+  const dispatch = useDispatch();
+  const [selectedHotel, setSelectedHotel] = useState([]);
+  const isSaved = useSavedCheck();
+  const isThisSaved = isSaved(parseInt(id));
+
   useEffect(() => {
     const hotel = HomePageSliderOne.filter(
       (hotel) => hotel.id === parseInt(id)
     );
     setSelectedHotel(hotel);
-  }, [id]);
-  const [selectedHotel, setSelectedHotel] = useState([]);
+    setIsHotelSaved(isThisSaved);
+  }, [id, isThisSaved]);
 
-  const isSaved = useSavedCheck();
-  const dispatch = useDispatch();
+  const [isHotelSaved, setIsHotelSaved] = useState();
 
   const toggleSavedHandler =
     ({ img, title, location, price, features, details, rate, id }) =>
@@ -51,13 +53,13 @@ const SelectedHotelPage = () => {
       };
       if (!isSaved(id)) {
         dispatch(setSaved(hotel));
+        setIsHotelSaved(true);
       }
       if (isSaved(id)) {
         dispatch(removeSaved(hotel));
+        setIsHotelSaved(false);
       }
-      setIsHotelSaved(!isSaved(id));
     };
-  const [isHotelSaved, setIsHotelSaved] = useState();
 
   return (
     <StyledSelectedHotelContainer>
@@ -86,7 +88,6 @@ const SelectedHotelPage = () => {
                   <span>{features}</span>
                 </StyledSelectedHotelDetailsFeatures>
                 <StyledSelectedHotelDetailsSaveMark
-                  isSaved={isHotelSaved}
                   onClick={toggleSavedHandler({
                     img,
                     title,
@@ -97,6 +98,7 @@ const SelectedHotelPage = () => {
                     rate,
                     id,
                   })}
+                  isSaved={isHotelSaved}
                 >
                   <FaRegBookmark />
                 </StyledSelectedHotelDetailsSaveMark>

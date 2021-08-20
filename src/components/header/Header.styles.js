@@ -14,7 +14,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   z-index: 10;
   background-color: #fff;
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     height: 10vh;
     justify-content: space-between;
     padding: 0 1.5rem;
@@ -42,12 +42,12 @@ export const StyledHeaderLinks = styled.div`
       border-bottom: 1vh solid lightblue;
       transition: all 0.2s ease-in-out;
     }
-    :focus {
-      color: #fff;
-      background-color: #2a608f;
-      border-bottom: 1vh solid lightblue;
-      transition: all 0.2s linear;
-    }
+  }
+  #${(props) => props.isLink} {
+    color: #fff;
+    background-color: #2a608f;
+    border-bottom: 1vh solid lightblue;
+    transition: all 0.2s linear;
   }
   @media (max-width: 600px) {
     & a {

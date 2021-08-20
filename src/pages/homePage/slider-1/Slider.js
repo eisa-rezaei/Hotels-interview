@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination } from "swiper";
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 import { HomePageSliderOne } from "../../../data/data";
 import {
   StyledSliderContainer,
@@ -9,7 +9,6 @@ import {
 } from "./Slider.styles";
 
 import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import "swiper/components/effect-fade/effect-fade.scss";
@@ -17,7 +16,7 @@ import "swiper/components/effect-fade/effect-fade.scss";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, EffectCoverflow]);
 //, Scrollbar, Autoplay, A11y
 
 const Slider = () => {
@@ -46,6 +45,7 @@ const Slider = () => {
         // scrollbar={{ draggable: true }}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
+        effect="coverflow"
       >
         {HomePageSliderOne.map(({ img, title, location, id }, index) => (
           <SwiperSlide key={index}>
