@@ -6,7 +6,7 @@ export const StyledSliderContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: rgba(119, 150, 196, 1);
+  background-color: #f3f6fe;
   padding: 4vh 0;
 `;
 export const StyledSliderSingleItem = styled.div`
