@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Background from "../../assets/content/background.svg";
+import image from "../../assets/background/s.jpeg";
 
 export const StyledHomePageContainer = styled.div`
   width: 100%;
@@ -13,12 +13,6 @@ export const StyledSearchPart = styled.div`
   height: 75vh;
   margin-top: 8.5vh;
   padding: 75px 0 0 0;
-  background-image: url(${Background}),
-    linear-gradient(
-      135deg,
-      rgba(253, 252, 254, 0) 20%,
-      rgba(192, 192, 192, 0.8132440476190477) 100%
-    );
   z-index: 2;
   position: relative;
   background-repeat: no-repeat;
@@ -27,6 +21,11 @@ export const StyledSearchPart = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(${image});
+  background-size: cover;
+  color: #fff;
+
   & span {
     margin: 30px 0;
   }
@@ -39,9 +38,6 @@ export const StyledSearchPart = styled.div`
     }
   }
 `;
-export const StyledSearchPartTitle = styled.h5`
-  color: #fff;
-`;
 
 export const StyledSearchPartInput = styled.input`
   width: 50vw;
@@ -51,8 +47,8 @@ export const StyledSearchPartInput = styled.input`
   border-radius: 30px;
   font-size: 2vw;
   position: absolute;
-  top: 330px;
-  background-color: #f3f6fe;
+  top: 360px;
+  background-color: #fff;
   z-index: 2;
   @media (max-width: 600px) {
     width: 70vw;
@@ -66,7 +62,7 @@ export const StyledSearchPartResultsUl = styled.ul`
   height: ${(props) => (props.isOpen ? `auto` : `0`)};
   visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
   max-height: 45vh;
-  top: 335px;
+  top: 365px;
   z-index: 1;
   position: absolute;
   background-color: #fff;
