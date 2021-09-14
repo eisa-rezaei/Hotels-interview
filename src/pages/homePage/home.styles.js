@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import image from "../../assets/background/s.jpeg";
 
 export const StyledHomePageContainer = styled.div`
   width: 100%;
@@ -8,78 +7,125 @@ export const StyledHomePageContainer = styled.div`
   flex-direction: column;
   font-size: 5vw;
 `;
-export const StyledSearchPart = styled.div`
+export const StyledSearchPart = styled.section`
   width: 100%;
   height: 75vh;
   margin-top: 8.5vh;
-  padding: 75px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  @media (max-width: 600px) {
+    margin-top: 0;
+    height: auto;
+  }
+`;
+export const StyledSearchPartContant = styled.main`
+  width: 40%;
+  height: 75vh;
+  padding: 15px;
   z-index: 2;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-around;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(${image});
-  background-size: cover;
-  color: #fff;
+  color: #222;
+
+  & h4 {
+    color: #99b2f7;
+    font-size: 1.5rem;
+  }
+  & p {
+    color: #999;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & svg {
+      color: #4e7cb3;
+      margin-right: 10px;
+    }
+  }
 
   & span {
     margin: 30px 0;
   }
   @media (max-width: 600px) {
+    width: 100%;
     margin-top: 10vh;
     height: 55vh;
     & span {
       font-size: 2rem;
       margin-top: 30px;
     }
+    & h4 {
+      color: #99b2f7;
+      font-size: 0.8rem;
+    }
+    & p {
+      font-size: 0.8rem;
+    }
   }
 `;
 
-export const StyledSearchPartInput = styled.input`
-  width: 50vw;
-  height: 7vh;
-  outline: none;
-  padding-left: 20px;
-  border-radius: 30px;
-  font-size: 2vw;
-  position: absolute;
-  top: 360px;
-  background-color: #fff;
+export const StyledSearchPartInputContainer = styled.div`
+  width: 100%;
+  padding: 0 15px;
+  position: relative;
   z-index: 2;
+  color: #a0a0a0;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  background-color: #f3f6fe;
+  display: flex;
+  align-items: center;
+`;
+
+export const StyledSearchPartInput = styled.input`
+  width: 100%;
+  height: 8vh;
+  margin: 0 10px;
+  z-index: 2;
+  outline: none;
+  font-size: 2vw;
+  background-color: inherit;
+  ::placeholder {
+    color: #a0a0a0;
+    font-size: 1rem;
+  }
   @media (max-width: 600px) {
     width: 70vw;
-    height: 6vh;
+    height: 7vh;
     font-size: 4vw;
-    top: 250px;
+    top: 180px;
   }
 `;
 export const StyledSearchPartResultsUl = styled.ul`
-  width: 50vw;
+  width: 100%;
   height: ${(props) => (props.isOpen ? `auto` : `0`)};
   visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
+  margin-left: -15px;
   max-height: 45vh;
-  top: 365px;
+  top: 7vh;
   z-index: 1;
   position: absolute;
   background-color: #fff;
   border-radius: 30px;
-  padding-top: 5vh;
   overflow: hidden;
   a {
     color: #222;
   }
   @media (max-width: 600px) {
-    top: 250px;
-    width: 70vw;
+    top: 7vh;
+    width: 100%;
   }
 `;
 export const StyledSearchPartResultsli = styled.li`
   width: 100%;
-  height: 8vh;
+  height: 7vh;
   border-bottom: 1px solid #e0e0e0;
   font-size: 1rem;
   display: flex;
@@ -115,20 +161,21 @@ export const StyledSearchPartResultsli = styled.li`
   }
 `;
 export const StyledSearchPartIcons = styled.div`
-  width: 40vw;
-  height: 15vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  display: none;
   @media (max-width: 600px) {
-    width: 60vw;
+    min-width: 100%;
+    align-self: center;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 export const StyledSearchPartIcon = styled.span`
   & svg {
-    width: 6vw;
-    height: 7vh;
+    width: 60px;
+    height: 60px;
     padding: 10px;
     border-radius: 5px;
     fill: #fff;
@@ -143,9 +190,43 @@ export const StyledSearchPartIcon = styled.span`
   }
   @media (max-width: 600px) {
     & svg {
-      width: 10vw;
-      height: 6vh;
+      width: 60px;
+      height: 60px;
       padding: 12px;
     }
+  }
+`;
+
+export const StHomeSeeMorePart = styled.div`
+  width: 100%;
+  padding: 0 15px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & span {
+    color: #99b2f7;
+    font-size: 1rem;
+    font-variant: small-caps;
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    & span {
+      color: #99b2f7;
+      font-size: 0.6rem;
+    }
+  }
+`;
+export const StHomeImageContainer = styled.article`
+  width: 60%;
+  height: 100%;
+  align-self: center;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @media (max-width: 600px) {
+    display: none;
   }
 `;

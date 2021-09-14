@@ -12,9 +12,11 @@ export const StyledFooterContainer = styled.footer`
 export const StyledFooterContainerCopyRight = styled.div`
   width: 100%;
   height: auto;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   background-color: #316ea7;
   color: #fff;
   & h2 {
@@ -33,6 +35,18 @@ export const StyledFooterContainerCopyRight = styled.div`
       :hover {
         color: #d0d0d0;
         cursor: pointer;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    & h2 {
+      font-size: 4vw;
+      letter-spacing: 1px;
+    }
+    & span {
+      margin: 5px 0;
+      & svg {
+        font-size: 4vw;
       }
     }
   }

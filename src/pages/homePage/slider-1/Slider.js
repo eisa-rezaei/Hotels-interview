@@ -1,51 +1,31 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, { Pagination, Autoplay, EffectFade } from "swiper";
+import { MdKeyboardArrowRight, MdLocationOn } from "react-icons/md";
 import { HomePageSliderOne } from "../../../data/data";
+
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import "swiper/components/effect-fade";
+
+import { Link } from "react-router-dom";
 import {
   StyledSliderContainer,
   StyledSliderSingleItem,
-  StyledSliderSingleItemPagination,
+  StyledSliderSingleItemInfo,
+  StyledSliderSingleItemInfoIcon,
 } from "./Slider.styles";
 
-import "swiper/swiper.scss";
-import "swiper/components/pagination/pagination.scss";
-import "swiper/components/scrollbar/scrollbar.scss";
-import "swiper/components/effect-fade/effect-fade.scss";
-
-import { Link } from "react-router-dom";
-import { MdLocationOn } from "react-icons/md";
-
-SwiperCore.use([Pagination, EffectCoverflow]);
-//, Scrollbar, Autoplay, A11y
-
 const Slider = () => {
+  SwiperCore.use(Pagination, Autoplay, EffectFade);
   return (
     <StyledSliderContainer>
       <Swiper
-        spaceBetween={50}
-        // a11y
-        // effect
-        pagination={{
-          el: ".pagination",
-        }}
-        // grabCursor
-        centeredSlides
-        // effect={"coverflow"}
-        // coverflowEffect={{
-        //   rotate: 50,
-        //   stretch: 0,
-        //   depth: 100,
-        //   modifier: 1,
-        //   slideShadows: true,
-        // }}
-        loop
-        // autoplay={5}
-        slidesPerView={2}
-        // scrollbar={{ draggable: true }}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
-        effect="coverflow"
+        slidesPerView={1.5}
+        spaceBetween={20}
+        pagination={{ el: "pagination" }}
+        autoplay
       >
         {HomePageSliderOne.map(({ img, title, location, id }, index) => (
           <SwiperSlide key={index}>
@@ -53,11 +33,17 @@ const Slider = () => {
               <Link to={`/hotelPage/${id}`}>
                 <img src={img} alt={title} />
               </Link>
-              <h5>{title}</h5>
-              <h6>
-                <MdLocationOn /> {location}
-              </h6>
-              <StyledSliderSingleItemPagination className="pagination"></StyledSliderSingleItemPagination>
+              <StyledSliderSingleItemInfo>
+                <span>
+                  <h5>{title}</h5>
+                  <p>
+                    <MdLocationOn /> {location}
+                  </p>
+                </span>
+                <StyledSliderSingleItemInfoIcon>
+                  <MdKeyboardArrowRight />
+                </StyledSliderSingleItemInfoIcon>
+              </StyledSliderSingleItemInfo>
             </StyledSliderSingleItem>
           </SwiperSlide>
         ))}

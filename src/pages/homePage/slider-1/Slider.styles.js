@@ -1,30 +1,44 @@
 import styled from "styled-components";
 
 export const StyledSliderContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #f3f6fe;
   padding: 4vh 0;
+  padding-left: 15px;
 `;
 export const StyledSliderSingleItem = styled.div`
-  width: 48vw;
+  width: inherit;
   height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  background-color: #f3f6fe;
   & img {
     width: 100%;
-    height: 33vw;
+    height: 40vw;
     object-fit: fill;
     cursor: inherit;
     z-index: 1;
   }
-  & h6 {
+`;
+export const StyledSliderSingleItemInfo = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 2rem;
+  & span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  & p {
+    margin: 10px 0;
+    color: #999;
+    font-size: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -33,11 +47,25 @@ export const StyledSliderSingleItem = styled.div`
       margin-right: 10px;
     }
   }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+    padding: 10px;
+    & p {
+      font-size: 0.7rem;
+    }
+  }
 `;
-export const StyledSliderSingleItemPagination = styled.span`
-  width: 10vh;
-  margin: 30px auto;
+export const StyledSliderSingleItemInfoIcon = styled.div`
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  background-color: #99b2f7;
+  @media (max-width: 600px) {
+    width: 30px;
+    height: 30px;
+  }
 `;

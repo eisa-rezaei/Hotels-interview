@@ -1,21 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import { Link } from "react-router-dom";
 import { HomePageSliderOne } from "../../../data/data";
+import {
+  setFavorite,
+  removeFavorite,
+} from "../../../redux/favorites/productActions";
+import { useFavoriteCheck } from "../favoriteCheck";
 import {
   StyledHotelListContainer,
   StyledHotelListItem,
   StyledHotelListItemRatePart,
   StyledHotelListItemTitle,
 } from "./HotelsStyles";
-import { useDispatch } from "react-redux";
-import {
-  setFavorite,
-  removeFavorite,
-} from "../../../redux/favorites/productActions";
-import { useFavoriteCheck } from "../favoriteCheck";
 
 const HotelsList = () => {
   const dispatch = useDispatch();
