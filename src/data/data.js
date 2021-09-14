@@ -98,7 +98,7 @@ export const HomePageSliderOne = [
 ];
 
 export const HomePageSearchSvg = [
-  { Icon: IconA, color: "#6482f2" },
-  { Icon: IconB, color: "#e2796b" },
-  { Icon: IconC, color: "#5f69df" },
+  { icon: <IconA />, color: "#6482f2" },
+  { icon: <IconB />, color: "#e2796b" },
+  { icon: <IconC />, color: "#5f69df" },
 ];
