@@ -168,10 +168,11 @@ export const StNothingToShow = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  & svg {
+    font-size: 8rem;
+  }
   & p {
     margin: 20px 0;
-    display: flex;
-    align-items: center;
   }
   & a {
     text-decoration: underline;

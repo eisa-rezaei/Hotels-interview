@@ -47,15 +47,14 @@ const Favorites = () => {
   return (
     <StyledFavoritesPageContainer>
       <StyledFavoritesPageItemContainer>
-        <h6>your favorite hotels :</h6>
-        {favorites.length === 0 && (
+        {favorites.length === 0 ? (
           <StNothingToShow>
-            <p>
-              No thing to show &nbsp;
-              <RiEmotionUnhappyLine />
-            </p>
+            <RiEmotionUnhappyLine />
+            <p>No thing to show</p>
             <Link to="/">Let's add some</Link>
           </StNothingToShow>
+        ) : (
+          <h6>your favorite hotels :</h6>
         )}
         {favorites.map(
           ({ title, img, price, rate, id, details, location }, index) => (

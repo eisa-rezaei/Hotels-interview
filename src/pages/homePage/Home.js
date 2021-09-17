@@ -11,7 +11,7 @@ import { HomePageSearchSvg, HomePageSliderOne } from "../../data/data";
 import Slider from "./slider-1/Slider";
 import HotelsList from "./hotelsList/HotelsList";
 import Footer from "../../components/footer/Footer";
-import BgImage from "./../../assets/content/Home.jpg";
+import BgImage from "./../../assets/content/Home.png";
 
 import {
   StHomeImageContainer,
@@ -55,7 +55,7 @@ const Home = () => {
         <StyledSearchPartContant>
           <h4>Hello, {USER_INFO.name}</h4>
           <h3>choose your best hotel!</h3>
-          <StyledSearchPartInputContainer>
+          <StyledSearchPartInputContainer searchValue={searchValue}>
             <BiSearch />
             <StyledSearchPartInput
               placeholder="Type Here"
@@ -63,21 +63,27 @@ const Home = () => {
               type="text"
               onChange={(e) => hotelSearchHandler(e)}
             />
-            <RiArrowDownSLine />
+            {searchValue && <RiArrowDownSLine />}
             <StyledSearchPartResultsUl isOpen={searchValue}>
-              {hotel.map((hotel) => {
-                return (
-                  <Link key={hotel.id} to={`hotelpage/${hotel.id}`}>
-                    <StyledSearchPartResultsli>
-                      <p>{hotel.title}</p>
-                      <span>
-                        {hotel.rate}
-                        <FaStar />
-                      </span>
-                    </StyledSearchPartResultsli>
-                  </Link>
-                );
-              })}
+              {hotel.length > 0 ? (
+                hotel.map((hotel) => {
+                  return (
+                    <Link key={hotel.id} to={`hotelpage/${hotel.id}`}>
+                      <StyledSearchPartResultsli>
+                        <p>{hotel.title}</p>
+                        <span>
+                          {hotel.rate}
+                          <FaStar />
+                        </span>
+                      </StyledSearchPartResultsli>
+                    </Link>
+                  );
+                })
+              ) : (
+                <StyledSearchPartResultsli>
+                  NOT MATCHED
+                </StyledSearchPartResultsli>
+              )}
             </StyledSearchPartResultsUl>
           </StyledSearchPartInputContainer>
           <p>

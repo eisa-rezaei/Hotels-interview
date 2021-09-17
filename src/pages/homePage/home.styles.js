@@ -24,7 +24,7 @@ export const StyledSearchPart = styled.section`
 export const StyledSearchPartContant = styled.main`
   width: 40%;
   height: 75vh;
-  padding: 30px;
+  padding: 40px 30px;
   z-index: 2;
   color: #222;
   position: relative;
@@ -76,7 +76,8 @@ export const StyledSearchPartInputContainer = styled.div`
   z-index: 2;
   color: #a0a0a0;
   font-size: 1.5rem;
-  border-radius: 30px;
+  border-radius: ${(props) =>
+    props.searchValue ? `30px 30px 0px 0px;` : `30px;`};
   background-color: #f3f6fe;
   display: flex;
   align-items: center;
@@ -224,12 +225,13 @@ export const StHomeSeeMorePart = styled.div`
 export const StHomeImageContainer = styled.article`
   width: 60%;
   height: 100%;
-  align-self: center;
+  align-self: flex-end;
+  justify-self: flex-end;
   & img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    filter: hue-rotate(80deg);
+    object-fit: fill;
+    /* filter: hue-rotate(80deg); */
   }
   @media (max-width: 600px) {
     display: none;
