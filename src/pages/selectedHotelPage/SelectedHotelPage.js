@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { FaRegBookmark, FaStar } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { HomePageSliderOne } from "../../data/data";
+import { removeSaved, setSaved } from "../../redux/saved/productActions";
+import { useSavedCheck } from "./savedCheck";
 import {
   StyledSelectedHotelContainer,
   StyledSelectedHotelDetails,
@@ -17,8 +19,6 @@ import {
   StyledSelectedHotelFooterButton,
   StyledSelectedHotelFooterTitle,
 } from "./SelectedHotelPage.styles";
-import { removeSaved, setSaved } from "../../redux/saved/productActions";
-import { useSavedCheck } from "./savedCheck";
 
 const SelectedHotelPage = () => {
   const { id } = useParams();
@@ -79,9 +79,9 @@ const SelectedHotelPage = () => {
                       {rate} <FaStar />
                     </span>
                   </h2>
-                  <h4>
+                  <Link to="/locations">
                     <MdLocationOn /> {location}
-                  </h4>
+                  </Link>
                 </span>
                 <StyledSelectedHotelDetailsFeatures>
                   <h3>features</h3>

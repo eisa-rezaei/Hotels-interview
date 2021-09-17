@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   z-index: 10;
   background-color: #fff;
-  border-bottom: 1px solid #2a608f;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,6 +39,7 @@ export const StyledHeaderLinks = styled.div`
   }
   #${(props) => props.isLink} {
     color: #99b2f7;
+    font-weight: 600;
     letter-spacing: 1px;
     transition: all 0.1s linear;
   }

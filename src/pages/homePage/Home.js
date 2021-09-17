@@ -46,19 +46,19 @@ const Home = () => {
 
   const USER_INFO = {
     name: "Eisa Rezaei",
-    location: "Iran, Ardabil",
+    location: "Iran, Tehran",
   };
 
   return (
     <StyledHomePageContainer>
       <StyledSearchPart>
         <StyledSearchPartContant>
-          <h4>Hello , {USER_INFO.name}</h4>
+          <h4>Hello, {USER_INFO.name}</h4>
           <h3>choose your best hotel!</h3>
           <StyledSearchPartInputContainer>
             <BiSearch />
             <StyledSearchPartInput
-              placeholder="search"
+              placeholder="Type Here"
               id="search"
               type="text"
               onChange={(e) => hotelSearchHandler(e)}

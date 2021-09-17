@@ -45,7 +45,7 @@ const Favorites = () => {
   return (
     <StyledFavoritesPageContainer>
       <StyledFavoritesPageItemContainer>
-        <h5>your favorite hotels :</h5>
+        <h6>your favorite hotels :</h6>
 
         {favorites.map(
           ({ title, img, price, rate, id, details, location }, index) => (

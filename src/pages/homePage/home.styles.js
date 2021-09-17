@@ -107,14 +107,21 @@ export const StyledSearchPartResultsUl = styled.ul`
   visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
   margin-left: -15px;
   max-height: 45vh;
-  top: 7vh;
+  top: 7.5vh;
   z-index: 1;
   position: absolute;
   background-color: #fff;
-  border-radius: 30px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 30px 30px;
   overflow: hidden;
-  a {
+  & a {
     color: #222;
+  }
+  & svg {
+    z-index: 1;
+  }
+  :last-child {
+    border-bottom: none;
   }
   @media (max-width: 600px) {
     top: 7vh;
@@ -210,7 +217,7 @@ export const StHomeSeeMorePart = styled.div`
     font-size: 1rem;
     & span {
       color: #99b2f7;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
   }
 `;

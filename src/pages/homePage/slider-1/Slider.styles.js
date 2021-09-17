@@ -67,6 +67,7 @@ export const StyledSliderSingleItemInfoIcon = styled.div`
   & a {
     display: flex;
     align-items: center;
+    color: #fff;
   }
   @media (max-width: 600px) {
     width: 30px;

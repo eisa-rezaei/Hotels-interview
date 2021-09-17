@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
   width: 100%;
+  padding: 10px 0;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,19 +15,21 @@ export const StyledFooter = styled.footer`
   }
   & span {
     width: 25%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    & a {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
     & svg {
       font-size: 20px;
       :hover {
         color: #d0d0d0;
         cursor: pointer;
       }
-    }
-    & a {
-      color: #fff;
     }
   }
   @media (max-width: 700px) {

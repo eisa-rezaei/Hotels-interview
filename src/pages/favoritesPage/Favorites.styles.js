@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // page container
 export const StyledFavoritesPageContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ export const StyledFavoritesPageItem = styled.article`
   flex-direction: row;
   align-items: center;
   justify-content: baseline;
-  margin: 3vw 0;
+  margin: 2vh 0;
   border-radius: 10px;
   overflow: hidden;
   background-color: #f3f6fe;
@@ -43,7 +43,7 @@ export const StyledFavoritesPageItem = styled.article`
   }
   :hover {
     background-color: #fff;
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s linear;
   }
   @media (max-width: 700px) {
