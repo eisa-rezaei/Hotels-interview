@@ -12,8 +12,8 @@ import {
   removeFavorite,
   setFavorite,
 } from "../../redux/favorites/productActions";
-import { StNothingToShow } from "../savedPage/Saved.styles";
 import {
+  StNothingToShow,
   StyledFavoritesPageContainer,
   StyledFavoritesPageItem,
   StyledFavoritesPageItemContainer,

@@ -156,7 +156,7 @@ export const StyledSavedPageItemRate = styled.div`
     }
   }
 `;
-export const StNothingToShow = styled.div`
+export const StNothingToShowSaved = styled.div`
   width: 100%;
   height: 60vh;
   font-size: 2rem;
@@ -166,9 +166,12 @@ export const StNothingToShow = styled.div`
   justify-content: center;
   & svg {
     font-size: 8rem;
+    opacity: 0.7;
   }
   & p {
     margin: 20px 0;
+    opacity: 0.8;
+    font-weight: 900;
   }
   & a {
     font-size: 1rem;

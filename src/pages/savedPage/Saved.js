@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { removeSaved, setSaved } from "../../redux/saved/productActions";
 
 import {
-  StNothingToShow,
+  StNothingToShowSaved,
   StyledSavedPageContainer,
   StyledSavedPageItem,
   StyledSavedPageItemContainer,
@@ -46,11 +46,11 @@ const Saved = () => {
     <StyledSavedPageContainer>
       <StyledSavedPageItemContainer>
         {saved.length === 0 ? (
-          <StNothingToShow>
+          <StNothingToShowSaved>
             <RiEmotionUnhappyLine />
             <p>No thing to show</p>
             <Link to="/">Let's add some</Link>
-          </StNothingToShow>
+          </StNothingToShowSaved>
         ) : (
           <h6>your saved hotels :</h6>
         )}

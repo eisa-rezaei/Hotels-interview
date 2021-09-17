@@ -50,6 +50,7 @@ export const StyledHotelListItemTitle = styled.span`
     padding-left: 5px;
     & a {
       font-size: 35px;
+      color: #316ea7;
     }
   }
   & a {

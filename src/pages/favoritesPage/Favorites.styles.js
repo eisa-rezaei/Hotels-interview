@@ -170,12 +170,16 @@ export const StNothingToShow = styled.div`
   justify-content: center;
   & svg {
     font-size: 8rem;
+    opacity: 0.7;
   }
   & p {
     margin: 20px 0;
+    opacity: 0.8;
+    font-weight: 900;
   }
   & a {
     text-decoration: underline;
+    font-size: 1rem;
     :hover {
       text-decoration: none;
     }

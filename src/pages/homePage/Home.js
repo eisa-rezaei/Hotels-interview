@@ -5,13 +5,13 @@ import { FaStar } from "react-icons/fa";
 import { IoGridOutline } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { RiArrowDownSLine, RiEmotionUnhappyLine } from "react-icons/ri";
 
 import { HomePageSearchSvg, HomePageSliderOne } from "../../data/data";
 import Slider from "./slider-1/Slider";
 import HotelsList from "./hotelsList/HotelsList";
 import Footer from "../../components/footer/Footer";
-import BgImage from "./../../assets/content/Home.png";
+import BgImage from "./../../assets/content/home1.png";
 
 import {
   StHomeImageContainer,
@@ -80,8 +80,11 @@ const Home = () => {
                   );
                 })
               ) : (
-                <StyledSearchPartResultsli>
-                  NOT MATCHED
+                <StyledSearchPartResultsli isMatched={hotel.length === 0}>
+                  <p>NOT MATCHED</p>
+                  <span>
+                    <RiEmotionUnhappyLine />
+                  </span>
                 </StyledSearchPartResultsli>
               )}
             </StyledSearchPartResultsUl>

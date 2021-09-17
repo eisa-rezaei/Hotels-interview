@@ -106,7 +106,7 @@ export const StyledSearchPartResultsUl = styled.ul`
   width: 100%;
   height: ${(props) => (props.isOpen ? `auto` : `0`)};
   visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
-  margin-left: -15px;
+  margin: 5px 0 0 -15px;
   max-height: 45vh;
   top: 7.5vh;
   z-index: 1;
@@ -135,16 +135,20 @@ export const StyledSearchPartResultsli = styled.li`
   border-bottom: 1px solid #e0e0e0;
   font-size: 1rem;
   display: flex;
+  padding: 0 10px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
   & span {
     width: 5vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: ${(props) =>
+      props.isMatched ? `right` : `space-between`};
     & svg {
-      color: orange;
+      ${(props) =>
+        props.isMatched
+          ? `font-size: 1.5rem; color: #a0a0a0;`
+          : `color: orange;`}
     }
   }
   :hover {
@@ -230,8 +234,7 @@ export const StHomeImageContainer = styled.article`
   & img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
-    /* filter: hue-rotate(80deg); */
+    object-fit: contain;
   }
   @media (max-width: 600px) {
     display: none;
