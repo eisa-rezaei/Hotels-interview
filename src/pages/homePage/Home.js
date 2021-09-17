@@ -5,13 +5,13 @@ import { FaStar } from "react-icons/fa";
 import { IoGridOutline } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { RiArrowDownSLine, RiEmotionUnhappyLine } from "react-icons/ri";
 
 import { HomePageSearchSvg, HomePageSliderOne } from "../../data/data";
 import Slider from "./slider-1/Slider";
 import HotelsList from "./hotelsList/HotelsList";
 import Footer from "../../components/footer/Footer";
-import BgImage from "./../../assets/content/Home.jpg";
+import BgImage from "./../../assets/content/home1.png";
 
 import {
   StHomeImageContainer,
@@ -46,38 +46,47 @@ const Home = () => {
 
   const USER_INFO = {
     name: "Eisa Rezaei",
-    location: "Iran, Ardabil",
+    location: "Iran, Tehran",
   };
 
   return (
     <StyledHomePageContainer>
       <StyledSearchPart>
         <StyledSearchPartContant>
-          <h4>Hello , {USER_INFO.name}</h4>
+          <h4>Hello, {USER_INFO.name}</h4>
           <h3>choose your best hotel!</h3>
-          <StyledSearchPartInputContainer>
+          <StyledSearchPartInputContainer searchValue={searchValue}>
             <BiSearch />
             <StyledSearchPartInput
-              placeholder="search"
+              placeholder="Type Here"
               id="search"
               type="text"
               onChange={(e) => hotelSearchHandler(e)}
             />
-            <RiArrowDownSLine />
+            {searchValue && <RiArrowDownSLine />}
             <StyledSearchPartResultsUl isOpen={searchValue}>
-              {hotel.map((hotel) => {
-                return (
-                  <Link key={hotel.id} to={`hotelpage/${hotel.id}`}>
-                    <StyledSearchPartResultsli>
-                      <p>{hotel.title}</p>
-                      <span>
-                        {hotel.rate}
-                        <FaStar />
-                      </span>
-                    </StyledSearchPartResultsli>
-                  </Link>
-                );
-              })}
+              {hotel.length > 0 ? (
+                hotel.map((hotel) => {
+                  return (
+                    <Link key={hotel.id} to={`hotelpage/${hotel.id}`}>
+                      <StyledSearchPartResultsli>
+                        <p>{hotel.title}</p>
+                        <span>
+                          {hotel.rate}
+                          <FaStar />
+                        </span>
+                      </StyledSearchPartResultsli>
+                    </Link>
+                  );
+                })
+              ) : (
+                <StyledSearchPartResultsli isMatched={hotel.length === 0}>
+                  <p>NOT MATCHED</p>
+                  <span>
+                    <RiEmotionUnhappyLine />
+                  </span>
+                </StyledSearchPartResultsli>
+              )}
             </StyledSearchPartResultsUl>
           </StyledSearchPartInputContainer>
           <p>

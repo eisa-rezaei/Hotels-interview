@@ -50,10 +50,12 @@ const HotelsList = () => {
               <img src={img} alt={title} />
             </Link>
             <StyledHotelListItemTitle>
-              <h5>{title}</h5>
-              <h6>
+              <h5>
+                <Link to={`/hotelPage/${id}`}>{title}</Link>
+              </h5>
+              <Link to={`/locations`}>
                 <MdLocationOn /> {location}
-              </h6>
+              </Link>
               <p>
                 {price}$<span>/night</span>
               </p>

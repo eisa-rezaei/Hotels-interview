@@ -22,7 +22,7 @@ export const StyledHotelListItem = styled.article`
   position: relative;
   transition: all 0.2s linear;
   :hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s linear;
   }
   & a {
@@ -47,10 +47,13 @@ export const StyledHotelListItemTitle = styled.span`
   font-size: 1rem;
 
   & h5 {
-    font-size: 1.6rem;
     padding-left: 5px;
+    & a {
+      font-size: 35px;
+      color: #316ea7;
+    }
   }
-  & h6 {
+  & a {
     font-size: 0.8rem;
     color: #949399;
     margin: 5px 0;

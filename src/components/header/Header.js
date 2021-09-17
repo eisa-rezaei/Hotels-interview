@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { SideBarData } from "../../data/data";
@@ -21,32 +21,26 @@ import userImage from "../../assets/header/user-image.png";
 
 const Header = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const [navbarBg, setNavbarBg] = useState({
-    isHome: true,
-    isFavorite: false,
-    isSaved: false,
-    isLocation: false,
-    isContact: false,
-  });
+  const location = useLocation();
 
   const HandeltoggleSideBar = () => () => {
     setIsSideBarOpen(!isSideBarOpen);
   };
 
   const HandleNavLinkProp = () => {
-    if (navbarBg.isHome) {
+    if (location.pathname === "/") {
       return "nav-link-home";
     }
-    if (navbarBg.isFavorite) {
+    if (location.pathname === "/favorites") {
       return "nav-link-favorite";
     }
-    if (navbarBg.isLocation) {
+    if (location.pathname === "/locations") {
       return "nav-link-location";
     }
-    if (navbarBg.isSaved) {
+    if (location.pathname === "/saved") {
       return "nav-link-saved";
     }
-    if (navbarBg.isContact) {
+    if (location.pathname === "/contact") {
       return "nav-link-contact";
     }
   };
@@ -63,89 +57,19 @@ const Header = () => {
           </Link>
         </StyledHeaderLogo>
         <StyledHeaderLinks isLink={HandleNavLinkProp()}>
-          <Link
-            to="/"
-            key="1"
-            id="nav-link-home"
-            replace
-            onClick={() =>
-              setNavbarBg({
-                isHome: true,
-                isFavorite: false,
-                isSaved: false,
-                isLocation: false,
-                isContact: false,
-              })
-            }
-          >
+          <Link to="/" key="1" id="nav-link-home" replace>
             Home
           </Link>
-          <Link
-            to="/favorites"
-            key="2"
-            id="nav-link-favorite"
-            replace
-            onClick={() =>
-              setNavbarBg({
-                isHome: false,
-                isFavorite: true,
-                isSaved: false,
-                isLocation: false,
-                isContact: false,
-              })
-            }
-          >
+          <Link to="/favorites" key="2" id="nav-link-favorite" replace>
             favorites
           </Link>
-          <Link
-            to="/saved"
-            key="3"
-            id="nav-link-saved"
-            replace
-            onClick={() =>
-              setNavbarBg({
-                isHome: false,
-                isFavorite: false,
-                isSaved: true,
-                isLocation: false,
-                isContact: false,
-              })
-            }
-          >
+          <Link to="/saved" key="3" id="nav-link-saved" replace>
             saved
           </Link>
-          <Link
-            to="/locations"
-            key="4"
-            id="nav-link-location"
-            replace
-            onClick={() =>
-              setNavbarBg({
-                isHome: false,
-                isFavorite: false,
-                isSaved: false,
-                isLocation: true,
-                isContact: false,
-              })
-            }
-          >
+          <Link to="/locations" key="4" id="nav-link-location" replace>
             locations
           </Link>
-          <Link
-            to="/contact"
-            key="5"
-            id="nav-link-contact"
-            replace
-            onClick={() =>
-              setNavbarBg({
-                isHome: false,
-                isFavorite: false,
-                isSaved: false,
-                isLocations: false,
-                isContact: true,
-              })
-            }
-          >
+          <Link to="/contact" key="5" id="nav-link-contact" replace>
             contact
           </Link>
         </StyledHeaderLinks>

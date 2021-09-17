@@ -6,6 +6,7 @@ export const StyledHomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 5vw;
+  font-family: Gloriy, sans-serif;
 `;
 export const StyledSearchPart = styled.section`
   width: 100%;
@@ -23,17 +24,17 @@ export const StyledSearchPart = styled.section`
 export const StyledSearchPartContant = styled.main`
   width: 40%;
   height: 75vh;
-  padding: 15px;
+  padding: 40px 30px;
   z-index: 2;
+  color: #222;
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-around;
-  color: #222;
-
+  & span {
+    margin: 30px 0;
+  }
   & h4 {
     color: #99b2f7;
     font-size: 1.5rem;
@@ -50,9 +51,6 @@ export const StyledSearchPartContant = styled.main`
     }
   }
 
-  & span {
-    margin: 30px 0;
-  }
   @media (max-width: 600px) {
     width: 100%;
     margin-top: 10vh;
@@ -78,7 +76,8 @@ export const StyledSearchPartInputContainer = styled.div`
   z-index: 2;
   color: #a0a0a0;
   font-size: 1.5rem;
-  border-radius: 30px;
+  border-radius: ${(props) =>
+    props.searchValue ? `30px 30px 0px 0px;` : `30px;`};
   background-color: #f3f6fe;
   display: flex;
   align-items: center;
@@ -107,16 +106,23 @@ export const StyledSearchPartResultsUl = styled.ul`
   width: 100%;
   height: ${(props) => (props.isOpen ? `auto` : `0`)};
   visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
-  margin-left: -15px;
+  margin: 5px 0 0 -15px;
   max-height: 45vh;
-  top: 7vh;
+  top: 7.5vh;
   z-index: 1;
   position: absolute;
   background-color: #fff;
-  border-radius: 30px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 30px 30px;
   overflow: hidden;
-  a {
+  & a {
     color: #222;
+  }
+  & svg {
+    z-index: 1;
+  }
+  :last-child {
+    border-bottom: none;
   }
   @media (max-width: 600px) {
     top: 7vh;
@@ -129,16 +135,20 @@ export const StyledSearchPartResultsli = styled.li`
   border-bottom: 1px solid #e0e0e0;
   font-size: 1rem;
   display: flex;
+  padding: 0 10px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
   & span {
     width: 5vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: ${(props) =>
+      props.isMatched ? `right` : `space-between`};
     & svg {
-      color: orange;
+      ${(props) =>
+        props.isMatched
+          ? `font-size: 1.5rem; color: #a0a0a0;`
+          : `color: orange;`}
     }
   }
   :hover {
@@ -199,7 +209,7 @@ export const StyledSearchPartIcon = styled.span`
 
 export const StHomeSeeMorePart = styled.div`
   width: 100%;
-  padding: 0 15px;
+  padding: 0 25px;
   font-size: 2rem;
   display: flex;
   align-items: center;
@@ -207,20 +217,20 @@ export const StHomeSeeMorePart = styled.div`
   & span {
     color: #99b2f7;
     font-size: 1rem;
-    font-variant: small-caps;
   }
   @media (max-width: 600px) {
     font-size: 1rem;
     & span {
       color: #99b2f7;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
   }
 `;
 export const StHomeImageContainer = styled.article`
   width: 60%;
   height: 100%;
-  align-self: center;
+  align-self: flex-end;
+  justify-self: flex-end;
   & img {
     width: 100%;
     height: 100%;

@@ -15,10 +15,15 @@ export const StyledSliderSingleItem = styled.div`
   background-color: #f3f6fe;
   & img {
     width: 100%;
-    height: 40vw;
-    object-fit: fill;
+    height: 25vw;
+    object-fit: cover;
     cursor: inherit;
     z-index: 1;
+  }
+  @media (max-width: 700px) {
+    & img {
+      height: 40vw;
+    }
   }
 `;
 export const StyledSliderSingleItemInfo = styled.div`
@@ -34,17 +39,17 @@ export const StyledSliderSingleItemInfo = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-  }
-  & p {
-    margin: 10px 0;
-    color: #999;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    & svg {
-      color: #4e7cb3;
-      margin-right: 10px;
+    & a {
+      margin: 10px 0;
+      color: #999;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      & svg {
+        color: #4e7cb3;
+        margin-right: 10px;
+      }
     }
   }
   @media (max-width: 600px) {
@@ -63,7 +68,14 @@ export const StyledSliderSingleItemInfoIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: flex-end;
+  margin-bottom: 10px;
   background-color: #99b2f7;
+  & a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
   @media (max-width: 600px) {
     width: 30px;
     height: 30px;

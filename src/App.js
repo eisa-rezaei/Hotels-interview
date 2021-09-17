@@ -7,7 +7,7 @@ import Header from "./components/header/Header";
 import Saved from "./pages/savedPage/Saved";
 import Locations from "./pages/locationsPage/Locations";
 import Favorites from "./pages/favoritesPage/Favorites";
-import Contact from "./pages/contactPage/Contact";
+import Contact from "./pages/contactPage";
 
 function App() {
   return (

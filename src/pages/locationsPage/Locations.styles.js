@@ -5,9 +5,8 @@ export const LocationPageContainer = styled.div`
   width: 100%;
   margin-top: 8.5vh;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   & img {
     width: 18vw;
     height: 15vh;
@@ -55,15 +54,16 @@ export const LocationPageRateAndPrice = styled.div`
 `;
 //container of hotel info side bar
 export const StyledLocationPageHotelInfoContainer = styled.div`
+  height: 91.5vh;
   top: 8.5vh;
   right: 0;
-  width: 43%;
-  height: 91.5vh;
   position: absolute;
   background-color: #fff;
-  transition: all 0.2s linear;
-  transform: ${(props) =>
-    props.hotelInfo ? `translateX(0)` : `translateX(100%)`};
+  transition: all 0.2s ease-in;
+  ${(props) =>
+    props.hotelInfo
+      ? ` transform: translateX(0);width: 43%; `
+      : `transform:translateX(100%);width: 0%; `};
   z-index: 2;
   & img {
     width: 100%;

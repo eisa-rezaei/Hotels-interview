@@ -2,20 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { MdLocationOn } from "react-icons/md";
+import { RiEmotionUnhappyLine } from "react-icons/ri";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
+
+import selectros from "../../redux/saved/selectors";
+import { useSavedCheck } from "../selectedHotelPage/savedCheck";
+import { useDispatch } from "react-redux";
+import { removeSaved, setSaved } from "../../redux/saved/productActions";
+
 import {
+  StNothingToShowSaved,
   StyledSavedPageContainer,
   StyledSavedPageItem,
   StyledSavedPageItemContainer,
   StyledSavedPageItemRate,
   StyledSavedPageItemTitle,
 } from "./Saved.styles";
-import selectros from "../../redux/saved/selectors";
-import { useSavedCheck } from "../selectedHotelPage/savedCheck";
-import { useDispatch } from "react-redux";
-import { removeSaved, setSaved } from "../../redux/saved/productActions";
-
 const Saved = () => {
   const saved = useSelector(selectros.getSaved);
   const isSaved = useSavedCheck();
@@ -42,8 +45,15 @@ const Saved = () => {
   return (
     <StyledSavedPageContainer>
       <StyledSavedPageItemContainer>
-        <h5>your saved hotels :</h5>
-
+        {saved.length === 0 ? (
+          <StNothingToShowSaved>
+            <RiEmotionUnhappyLine />
+            <p>No thing to show</p>
+            <Link to="/">Let's add some</Link>
+          </StNothingToShowSaved>
+        ) : (
+          <h6>your saved hotels :</h6>
+        )}
         {saved.map(
           ({ title, img, price, rate, id, details, location }, index) => (
             <StyledSavedPageItem key={index}>
@@ -51,10 +61,12 @@ const Saved = () => {
                 <img src={img} alt={title} />
               </Link>
               <StyledSavedPageItemTitle>
-                <h4>{title}</h4>
-                <h5>
+                <h4>
+                  <Link to={`/hotelPage/${id}`}> {title}</Link>
+                </h4>
+                <Link to="/locations">
                   <MdLocationOn /> {location}
-                </h5>
+                </Link>
                 <p>
                   {`${details.substring(0, 180)}... `}
                   <Link to={`hotelpage/${id}`}> show more </Link>

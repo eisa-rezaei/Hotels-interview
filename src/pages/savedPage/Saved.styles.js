@@ -1,19 +1,22 @@
 import styled from "styled-components";
-import background from "../../assets/background/pages-background.svg";
 
 // page container
 export const StyledSavedPageContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
+  padding: 12vh 0;
+  font-size: 5vw;
+  background-position: fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 12vh 0;
-  font-size: 5vw;
-  background: url(${background});
-  background-position: fixed;
-  background-size: cover;
+  @media (max-width: 700px) {
+    & h6 {
+      font-size: 1.2rem;
+    }
+  }
 `;
 // Saved container
 export const StyledSavedPageItemContainer = styled.section`
@@ -28,7 +31,7 @@ export const StyledSavedPageItem = styled.article`
   flex-direction: row;
   align-items: center;
   justify-content: baseline;
-  margin: 3vw 0;
+  margin: 2vh 0;
   border-radius: 10px;
   overflow: hidden;
   background-color: #f3f6fe;
@@ -45,7 +48,7 @@ export const StyledSavedPageItem = styled.article`
   }
   :hover {
     background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s linear;
   }
   @media (max-width: 700px) {
@@ -78,9 +81,12 @@ export const StyledSavedPageItemTitle = styled.div`
     }
   }
   & h4 {
-    font-size: 2.4rem;
+    & a {
+      color: #222;
+      font-size: 2.4rem;
+    }
   }
-  & h5 {
+  & a {
     color: #949399;
     font-size: 1.2rem;
     margin: 5px 0;
@@ -147,6 +153,31 @@ export const StyledSavedPageItemRate = styled.div`
   @media (max-width: 700px) {
     & span {
       font-size: 1rem;
+    }
+  }
+`;
+export const StNothingToShowSaved = styled.div`
+  width: 100%;
+  height: 60vh;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & svg {
+    font-size: 8rem;
+    opacity: 0.7;
+  }
+  & p {
+    margin: 20px 0;
+    opacity: 0.8;
+    font-weight: 900;
+  }
+  & a {
+    font-size: 1rem;
+    text-decoration: underline;
+    :hover {
+      text-decoration: none;
     }
   }
 `;

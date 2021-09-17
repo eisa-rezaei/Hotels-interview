@@ -79,8 +79,10 @@ export const StyledSelectedHotelDetailsTitle = styled.div`
       }
     }
   }
-  & span h4 {
+  & span a {
     width: 17vw;
+    font-size: 1.3rem;
+    font-weight: 700;
     color: goldenrod;
     display: flex;
     align-items: center;

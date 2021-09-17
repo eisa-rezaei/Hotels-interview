@@ -1,37 +1,32 @@
 import styled from "styled-components";
 
-export const StyledFooterContainer = styled.footer`
+export const StyledFooter = styled.footer`
   width: 100%;
-  height: 20vw;
-  position: relative;
-  & svg {
-    position: absolute;
-    bottom: 0;
-  }
-`;
-export const StyledFooterContainerCopyRight = styled.div`
-  width: 100%;
-  height: auto;
-  padding: 10px;
+  padding: 10px 0;
+  margin-top: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: #316ea7;
   color: #fff;
-  & h2 {
-    font-size: 2.5vw;
+  & h6 {
+    font-size: 16px;
+    font-weight: 400;
   }
   & span {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     & a {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
       color: #fff;
     }
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     & svg {
-      font-size: 2.5vw;
+      font-size: 20px;
       :hover {
         color: #d0d0d0;
         cursor: pointer;
