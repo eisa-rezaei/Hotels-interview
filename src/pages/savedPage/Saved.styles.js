@@ -12,6 +12,11 @@ export const StyledSavedPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 700px) {
+    & h6 {
+      font-size: 1.2rem;
+    }
+  }
 `;
 // Saved container
 export const StyledSavedPageItemContainer = styled.section`
@@ -148,6 +153,26 @@ export const StyledSavedPageItemRate = styled.div`
   @media (max-width: 700px) {
     & span {
       font-size: 1rem;
+    }
+  }
+`;
+export const StNothingToShow = styled.div`
+  width: 100%;
+  height: 60vh;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & p {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+  & a {
+    text-decoration: underline;
+    :hover {
+      text-decoration: none;
     }
   }
 `;

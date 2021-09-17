@@ -20,7 +20,7 @@ const Footer = () => {
           <FaLinkedin />
         </a>
       </span>
-      <h2>powered by eisa Rezaei</h2>
+      <h6>managed by eisa Rezaei</h6>
     </StyledFooter>
   );
 };

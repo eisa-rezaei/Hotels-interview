@@ -15,10 +15,15 @@ export const StyledSliderSingleItem = styled.div`
   background-color: #f3f6fe;
   & img {
     width: 100%;
-    height: 40vw;
-    object-fit: fill;
+    height: 25vw;
+    object-fit: cover;
     cursor: inherit;
     z-index: 1;
+  }
+  @media (max-width: 700px) {
+    & img {
+      height: 40vw;
+    }
   }
 `;
 export const StyledSliderSingleItemInfo = styled.div`
@@ -63,6 +68,8 @@ export const StyledSliderSingleItemInfoIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: flex-end;
+  margin-bottom: 10px;
   background-color: #99b2f7;
   & a {
     display: flex;

@@ -9,4 +9,10 @@ export const ContactPageContainer = styled.div`
   font-size: 5vw;
   background-position: fixed;
   background-size: cover;
+  & a {
+    text-decoration: underline;
+    :hover {
+      text-decoration: none;
+    }
+  }
 `;

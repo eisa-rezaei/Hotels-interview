@@ -2,20 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { MdLocationOn } from "react-icons/md";
+import { RiEmotionUnhappyLine } from "react-icons/ri";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
+
+import selectros from "../../redux/saved/selectors";
+import { useSavedCheck } from "../selectedHotelPage/savedCheck";
+import { useDispatch } from "react-redux";
+import { removeSaved, setSaved } from "../../redux/saved/productActions";
+
 import {
+  StNothingToShow,
   StyledSavedPageContainer,
   StyledSavedPageItem,
   StyledSavedPageItemContainer,
   StyledSavedPageItemRate,
   StyledSavedPageItemTitle,
 } from "./Saved.styles";
-import selectros from "../../redux/saved/selectors";
-import { useSavedCheck } from "../selectedHotelPage/savedCheck";
-import { useDispatch } from "react-redux";
-import { removeSaved, setSaved } from "../../redux/saved/productActions";
-
 const Saved = () => {
   const saved = useSelector(selectros.getSaved);
   const isSaved = useSavedCheck();
@@ -43,7 +46,15 @@ const Saved = () => {
     <StyledSavedPageContainer>
       <StyledSavedPageItemContainer>
         <h6>your saved hotels :</h6>
-
+        {saved.length === 0 && (
+          <StNothingToShow>
+            <p>
+              No thing to show &nbsp;
+              <RiEmotionUnhappyLine />
+            </p>
+            <Link to="/">Let's add some</Link>
+          </StNothingToShow>
+        )}
         {saved.map(
           ({ title, img, price, rate, id, details, location }, index) => (
             <StyledSavedPageItem key={index}>

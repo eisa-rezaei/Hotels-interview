@@ -26,6 +26,7 @@ ${Gloriy}
 }
 a {
   text-decoration: none;
+  color: inherit;
   & :focus{
     color: inherit;
   }

@@ -204,7 +204,7 @@ export const StyledSearchPartIcon = styled.span`
 
 export const StHomeSeeMorePart = styled.div`
   width: 100%;
-  padding: 0 15px;
+  padding: 0 25px;
   font-size: 2rem;
   display: flex;
   align-items: center;

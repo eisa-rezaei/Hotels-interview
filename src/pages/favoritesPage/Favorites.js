@@ -1,9 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { MdLocationOn } from "react-icons/md";
 import { AiFillHeart } from "react-icons/ai";
+import { RiEmotionUnhappyLine } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
+import selectros from "../../redux/favorites/selectors";
+import { useFavoriteCheck } from "../homePage/favoriteCheck";
+import {
+  removeFavorite,
+  setFavorite,
+} from "../../redux/favorites/productActions";
+import { StNothingToShow } from "../savedPage/Saved.styles";
 import {
   StyledFavoritesPageContainer,
   StyledFavoritesPageItem,
@@ -11,13 +20,6 @@ import {
   StyledFavoritesPageItemRate,
   StyledFavoritesPageItemTitle,
 } from "./Favorites.styles";
-import selectros from "../../redux/favorites/selectors";
-import { useFavoriteCheck } from "../homePage/favoriteCheck";
-import { useDispatch } from "react-redux";
-import {
-  removeFavorite,
-  setFavorite,
-} from "../../redux/favorites/productActions";
 
 const Favorites = () => {
   const favorites = useSelector(selectros.getFavorites);
@@ -46,7 +48,15 @@ const Favorites = () => {
     <StyledFavoritesPageContainer>
       <StyledFavoritesPageItemContainer>
         <h6>your favorite hotels :</h6>
-
+        {favorites.length === 0 && (
+          <StNothingToShow>
+            <p>
+              No thing to show &nbsp;
+              <RiEmotionUnhappyLine />
+            </p>
+            <Link to="/">Let's add some</Link>
+          </StNothingToShow>
+        )}
         {favorites.map(
           ({ title, img, price, rate, id, details, location }, index) => (
             <StyledFavoritesPageItem key={index}>

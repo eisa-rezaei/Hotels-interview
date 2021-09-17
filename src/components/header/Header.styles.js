@@ -40,7 +40,6 @@ export const StyledHeaderLinks = styled.div`
   #${(props) => props.isLink} {
     color: #99b2f7;
     font-weight: 600;
-    letter-spacing: 1px;
     transition: all 0.1s linear;
   }
   @media (max-width: 600px) {
@@ -75,7 +74,6 @@ export const StyledHeaderUserImage = styled.span`
     height: 4.5vw;
     border-radius: 50%;
     object-fit: contain;
-    border: 1px solid #2a608f;
     cursor: pointer;
     @media (max-width: 600px) {
       width: 9vw;

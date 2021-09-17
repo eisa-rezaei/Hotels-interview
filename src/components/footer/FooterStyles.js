@@ -10,8 +10,9 @@ export const StyledFooter = styled.footer`
   justify-content: flex-start;
   background-color: #316ea7;
   color: #fff;
-  & h2 {
+  & h6 {
     font-size: 16px;
+    font-weight: 400;
   }
   & span {
     width: 25%;
