@@ -5,15 +5,15 @@ export const StyledHeader = styled.header`
   height: 8.5vh;
   top: 0;
   left: 0;
+  font-size: 1.7vw;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+  border-bottom: 1px solid #2a608f;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  font-size: 1.7vw;
-  border-bottom: 1px solid #2a608f;
-  position: fixed;
-  z-index: 10;
-  background-color: #fff;
   @media (max-width: 700px) {
     height: 10vh;
     justify-content: space-between;
@@ -36,26 +36,17 @@ export const StyledHeaderLinks = styled.div`
     align-items: center;
     justify-content: center;
     transition: all 0.2s linear;
-    :hover {
-      color: #2a608f;
-      background-color: #fff;
-      border-bottom: 1vh solid lightblue;
-      transition: all 0.2s ease-in-out;
-    }
   }
   #${(props) => props.isLink} {
-    color: #fff;
-    background-color: #2a608f;
-    border-bottom: 1vh solid lightblue;
-    transition: all 0.2s linear;
-  }
-  @media (max-width: 600px) {
-    & a {
-      display: none;
-    }
+    color: #99b2f7;
+    letter-spacing: 1px;
+    transition: all 0.1s linear;
   }
   @media (max-width: 600px) {
     display: none;
+    & a {
+      display: none;
+    }
   }
 `;
 // Header Logo

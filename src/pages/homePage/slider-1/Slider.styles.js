@@ -34,17 +34,17 @@ export const StyledSliderSingleItemInfo = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-  }
-  & p {
-    margin: 10px 0;
-    color: #999;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    & svg {
-      color: #4e7cb3;
-      margin-right: 10px;
+    & a {
+      margin: 10px 0;
+      color: #999;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      & svg {
+        color: #4e7cb3;
+        margin-right: 10px;
+      }
     }
   }
   @media (max-width: 600px) {
@@ -64,6 +64,10 @@ export const StyledSliderSingleItemInfoIcon = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #99b2f7;
+  & a {
+    display: flex;
+    align-items: center;
+  }
   @media (max-width: 600px) {
     width: 30px;
     height: 30px;

@@ -1,13 +1,14 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Autoplay, EffectFade } from "swiper";
+import SwiperCore, { Autoplay } from "swiper";
 import { MdKeyboardArrowRight, MdLocationOn } from "react-icons/md";
 import { HomePageSliderOne } from "../../../data/data";
+import { useSizeCheckker } from "../../Hooks/SizeCheckker";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
-import "swiper/components/effect-fade";
+import "swiper/components/effect-fade/effect-fade.min.css";
 
 import { Link } from "react-router-dom";
 import {
@@ -18,14 +19,15 @@ import {
 } from "./Slider.styles";
 
 const Slider = () => {
-  SwiperCore.use(Pagination, Autoplay, EffectFade);
+  SwiperCore.use(Autoplay);
+  const size = useSizeCheckker();
   return (
     <StyledSliderContainer>
       <Swiper
-        slidesPerView={1.5}
+        slidesPerView={size ? 2.5 : 1.5}
         spaceBetween={20}
-        pagination={{ el: "pagination" }}
-        autoplay
+        autoplay={{ delay: 2000 }}
+        loop
       >
         {HomePageSliderOne.map(({ img, title, location, id }, index) => (
           <SwiperSlide key={index}>
@@ -36,12 +38,14 @@ const Slider = () => {
               <StyledSliderSingleItemInfo>
                 <span>
                   <h5>{title}</h5>
-                  <p>
+                  <Link to={`/locations`}>
                     <MdLocationOn /> {location}
-                  </p>
+                  </Link>
                 </span>
                 <StyledSliderSingleItemInfoIcon>
-                  <MdKeyboardArrowRight />
+                  <Link to={`/hotelPage/${id}`}>
+                    <MdKeyboardArrowRight />
+                  </Link>
                 </StyledSliderSingleItemInfoIcon>
               </StyledSliderSingleItemInfo>
             </StyledSliderSingleItem>

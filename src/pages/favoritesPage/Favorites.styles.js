@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from "../../assets/background/pages-background.svg";
 
 // page container
 export const StyledFavoritesPageContainer = styled.div`
@@ -11,7 +10,6 @@ export const StyledFavoritesPageContainer = styled.div`
   justify-content: center;
   padding: 12vh 0;
   font-size: 5vw;
-  background: url(${background});
   background-position: fixed;
   background-size: cover;
 `;
@@ -45,7 +43,7 @@ export const StyledFavoritesPageItem = styled.article`
   }
   :hover {
     background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s linear;
   }
   @media (max-width: 700px) {
@@ -78,9 +76,12 @@ export const StyledFavoritesPageItemTitle = styled.div`
     }
   }
   & h4 {
-    font-size: 2.4rem;
+    & a {
+      font-size: 2.4rem;
+      color: #222;
+    }
   }
-  & h5 {
+  & a {
     color: #949399;
     font-size: 1.2rem;
     margin: 5px 0;

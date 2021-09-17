@@ -54,10 +54,12 @@ const Favorites = () => {
                 <img src={img} alt={title} />
               </Link>
               <StyledFavoritesPageItemTitle>
-                <h4>{title}</h4>
-                <h5>
+                <h4>
+                  <Link to={`/hotelPage/${id}`}>{title}</Link>
+                </h4>
+                <Link to="/locations">
                   <MdLocationOn /> {location}
-                </h5>
+                </Link>
                 <p>
                   {`${details.substring(0, 180)}... `}
                   <Link to={`hotelpage/${id}`}> show more </Link>

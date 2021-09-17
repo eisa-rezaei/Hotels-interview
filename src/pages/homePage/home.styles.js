@@ -6,6 +6,7 @@ export const StyledHomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 5vw;
+  font-family: Gloriy, sans-serif;
 `;
 export const StyledSearchPart = styled.section`
   width: 100%;
@@ -23,17 +24,17 @@ export const StyledSearchPart = styled.section`
 export const StyledSearchPartContant = styled.main`
   width: 40%;
   height: 75vh;
-  padding: 15px;
+  padding: 30px;
   z-index: 2;
+  color: #222;
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-around;
-  color: #222;
-
+  & span {
+    margin: 30px 0;
+  }
   & h4 {
     color: #99b2f7;
     font-size: 1.5rem;
@@ -50,9 +51,6 @@ export const StyledSearchPartContant = styled.main`
     }
   }
 
-  & span {
-    margin: 30px 0;
-  }
   @media (max-width: 600px) {
     width: 100%;
     margin-top: 10vh;
@@ -207,7 +205,6 @@ export const StHomeSeeMorePart = styled.div`
   & span {
     color: #99b2f7;
     font-size: 1rem;
-    font-variant: small-caps;
   }
   @media (max-width: 600px) {
     font-size: 1rem;
@@ -225,6 +222,7 @@ export const StHomeImageContainer = styled.article`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: hue-rotate(80deg);
   }
   @media (max-width: 600px) {
     display: none;

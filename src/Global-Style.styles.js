@@ -1,13 +1,16 @@
 import { createGlobalStyle } from "styled-components";
+import Gloriy from "./assets/fonts/GILORY-FONT/Gilroy.css";
 
 export const GlobalStyle = createGlobalStyle`
-
+${Gloriy}
 * {
   border: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   vertical-align: baseline;
+  font-family: Gilroy , sans-serif;
+
 }
 .App {
   width: 100%;
@@ -18,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   justify-content: center;
   text-transform: capitalize;
   overflow: hidden;
-  font-family: 'ABeeZee', sans-serif;
+  font-family: Gilroy , sans-serif;
   user-select: none;
 }
 a {
