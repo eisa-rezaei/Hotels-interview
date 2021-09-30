@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <>
-      <StyledHeader>
+      <StyledHeader isLink={HandleNavLinkProp()}>
         <StyledHeaderSideBar>
           <GiHamburgerMenu onClick={HandeltoggleSideBar()} />
         </StyledHeaderSideBar>

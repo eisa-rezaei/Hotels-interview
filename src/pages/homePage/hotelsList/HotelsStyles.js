@@ -76,7 +76,9 @@ export const StyledHotelListItemTitle = styled.span`
   }
   @media (max-width: 600px) {
     & h5 {
-      font-size: 1rem;
+      & a {
+        font-size: 1rem;
+      }
     }
     & h6 {
       font-size: 0.6rem;

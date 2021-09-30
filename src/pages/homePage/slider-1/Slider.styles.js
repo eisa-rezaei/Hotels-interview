@@ -28,6 +28,7 @@ export const StyledSliderSingleItem = styled.div`
 `;
 export const StyledSliderSingleItemInfo = styled.div`
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,7 +41,7 @@ export const StyledSliderSingleItemInfo = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     & a {
-      margin: 10px 0;
+      /* margin: 10px 0; */
       color: #999;
       font-size: 1rem;
       display: flex;
