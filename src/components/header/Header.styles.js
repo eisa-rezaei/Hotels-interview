@@ -3,24 +3,26 @@ import styled from "styled-components";
 export const StyledHeader = styled.header`
   width: 100vw;
   height: 8.5vh;
-  top: 0;
-  left: 0;
   font-size: 1.7vw;
-  position: fixed;
   z-index: 10;
-  background-color: #fff;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  background-color: #fff;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  ${(props) =>
+    props.isLink === "nav-link-location"
+      ? `position: sticky;  top: 0;
+  left: 0;`
+      : `position: fixed;  top: 0;
+  left: 0;`}
   @media (max-width: 700px) {
     height: 10vh;
     justify-content: space-between;
     padding: 0 1.5rem;
   }
 `;
-// Header Links
+
 export const StyledHeaderLinks = styled.div`
   width: 45vw;
   height: 8vh;

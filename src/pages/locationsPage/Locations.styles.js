@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-//all
 export const LocationPageContainer = styled.div`
-  width: 100%;
-  margin-top: 8.5vh;
+  width: min(100%, 100vw);
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-basis: 100%;
   & img {
     width: 18vw;
     height: 15vh;
@@ -16,18 +15,15 @@ export const LocationPageContainer = styled.div`
     cursor: pointer;
   }
   .leaflet-container {
-    width: 100%;
+    width: 100vw;
     height: 91.5vh;
     z-index: 1;
   }
   @media (max-width: 600px) {
-    margin-top: 9.9vh;
+    height: 100vh;
     & img {
       width: 40vw;
     }
-  }
-  .leaflet-container {
-    height: 90vh;
   }
 `;
 // popup
@@ -54,7 +50,7 @@ export const LocationPageRateAndPrice = styled.div`
 `;
 //container of hotel info side bar
 export const StyledLocationPageHotelInfoContainer = styled.div`
-  height: 91.5vh;
+  height: 100%;
   top: 8.5vh;
   right: 0;
   position: absolute;
@@ -80,8 +76,9 @@ export const StyledLocationPageHotelInfoContainer = styled.div`
   }
   @media (max-width: 700px) {
     top: 9.9vh;
+    height: 91.5vh;
     width: 100%;
-    height: 90vh;
+    height: auto;
     & p {
       font-size: 0.9rem;
     }
