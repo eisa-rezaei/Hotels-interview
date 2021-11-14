@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { FaRegBookmark, FaStar } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { HomePageSliderOne } from "../../data/data";
-import { removeSaved, setSaved } from "../../redux/saved/productActions";
-import { useSavedCheck } from "./savedCheck";
+import React, {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
+import {FaRegBookmark, FaStar} from "react-icons/fa";
+import {MdLocationOn} from "react-icons/md";
+import {Link} from "react-router-dom";
+import {useParams} from "react-router-dom";
+import {HomePageSliderOne} from "../../data/data";
+import {removeSaved, setSaved} from "../../redux/saved/productActions";
+import {useSavedCheck} from "./savedCheck";
 import {
   StyledSelectedHotelContainer,
   StyledSelectedHotelDetails,
@@ -21,7 +21,7 @@ import {
 } from "./SelectedHotelPage.styles";
 
 const SelectedHotelPage = () => {
-  const { id } = useParams();
+  const {id} = useParams();
 
   const dispatch = useDispatch();
   const [selectedHotel, setSelectedHotel] = useState([]);
@@ -39,7 +39,7 @@ const SelectedHotelPage = () => {
   const [isHotelSaved, setIsHotelSaved] = useState();
 
   const toggleSavedHandler =
-    ({ img, title, location, price, features, details, rate, id }) =>
+    ({img, title, location, price, features, details, rate, id}) =>
     () => {
       const hotel = {
         img,
@@ -65,11 +65,8 @@ const SelectedHotelPage = () => {
     <StyledSelectedHotelContainer>
       <StyledSelectedHotel>
         {selectedHotel.map(
-          (
-            { img, title, location, price, features, details, rate, id },
-            index
-          ) => (
-            <StyledSelectedHotelDetails key={index}>
+          ({img, title, location, price, features, details, rate, id}) => (
+            <StyledSelectedHotelDetails key={id}>
               <img src={img} alt={title} />
               <StyledSelectedHotelDetailsTitle>
                 <span>

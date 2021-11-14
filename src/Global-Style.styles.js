@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import {createGlobalStyle} from "styled-components";
 import Gloriy from "./assets/fonts/GILORY-FONT/Gilroy.css";
 
 export const GlobalStyle = createGlobalStyle`
@@ -41,5 +41,10 @@ a {
   & :active{
     color: inherit;
   }
+}
+button {
+  color: inherit;
+  background-color: inherit;
+  border: 0;
 }
 `;
