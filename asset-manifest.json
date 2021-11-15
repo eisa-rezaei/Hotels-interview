@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.f4bd2fc2.chunk.css",
-    "main.js": "/static/js/main.fd47d4e3.chunk.js",
-    "main.js.map": "/static/js/main.fd47d4e3.chunk.js.map",
+    "main.js": "/static/js/main.3236641a.chunk.js",
+    "main.js.map": "/static/js/main.3236641a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.56e71fee.js",
     "runtime-main.js.map": "/static/js/runtime-main.56e71fee.js.map",
     "static/css/2.add362bb.chunk.css": "/static/css/2.add362bb.chunk.css",
@@ -19,17 +19,17 @@
     "static/media/3.ebddc71d.svg": "/static/media/3.ebddc71d.svg",
     "static/media/Gilroy.css": "/static/media/Gilroy-UltraLightItalic.986b714d.ttf",
     "static/media/header-logo.e059dc4b.svg": "/static/media/header-logo.e059dc4b.svg",
-    "static/media/home1.7ead34ba.png": "/static/media/home1.7ead34ba.png",
-    "static/media/hotel-picture-1.28352838.jpeg": "/static/media/hotel-picture-1.28352838.jpeg",
-    "static/media/hotel-picture-2.b1ee56d5.jpeg": "/static/media/hotel-picture-2.b1ee56d5.jpeg",
-    "static/media/hotel-picture-3.efef0ae8.jpeg": "/static/media/hotel-picture-3.efef0ae8.jpeg",
-    "static/media/hotel-picture-4.c3375184.jpeg": "/static/media/hotel-picture-4.c3375184.jpeg"
+    "static/media/home1.05dcd3df.webp": "/static/media/home1.05dcd3df.webp",
+    "static/media/hotel-picture-1.58cfa5e9.webp": "/static/media/hotel-picture-1.58cfa5e9.webp",
+    "static/media/hotel-picture-2.430c529e.webp": "/static/media/hotel-picture-2.430c529e.webp",
+    "static/media/hotel-picture-3.86420c46.webp": "/static/media/hotel-picture-3.86420c46.webp",
+    "static/media/hotel-picture-4.491c268d.webp": "/static/media/hotel-picture-4.491c268d.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.56e71fee.js",
     "static/css/2.add362bb.chunk.css",
     "static/js/2.62eafed3.chunk.js",
     "static/css/main.f4bd2fc2.chunk.css",
-    "static/js/main.fd47d4e3.chunk.js"
+    "static/js/main.3236641a.chunk.js"
   ]
 }
