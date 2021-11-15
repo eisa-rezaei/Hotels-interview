@@ -47,4 +47,7 @@ button {
   background-color: inherit;
   border: 0;
 }
+li {
+  list-style: none;
+}
 `;
