@@ -5,7 +5,6 @@ export const StyledSelectedHotelContainer = styled.main`
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 `;
@@ -47,6 +46,7 @@ export const StyledSelectedHotelDetails = styled.div`
     margin-top: 60vh;
   }
   & p {
+    margin: 0;
     padding: 1vh 1.5rem;
     background-color: #fff;
     z-index: 5;

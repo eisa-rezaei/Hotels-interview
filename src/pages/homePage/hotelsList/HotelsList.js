@@ -1,16 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { FaStar } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
-import { HomePageSliderOne } from "../../../data/data";
+import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
+import {FaStar} from "react-icons/fa";
+import {MdLocationOn} from "react-icons/md";
+import {HomePageSliderOne} from "../../../data/data";
 import {
   setFavorite,
   removeFavorite,
 } from "../../../redux/favorites/productActions";
-import { useFavoriteCheck } from "../favoriteCheck";
+import {useFavoriteCheck} from "../favoriteCheck";
 import {
   StyledHotelListContainer,
   StyledHotelListItem,
@@ -23,7 +23,7 @@ const HotelsList = () => {
   const isFavorite = useFavoriteCheck();
 
   const toggleFavoriteHandler =
-    ({ img, title, location, price, rate, id, details }) =>
+    ({img, title, location, price, rate, id, details}) =>
     () => {
       const hotel = {
         img,
@@ -44,7 +44,7 @@ const HotelsList = () => {
   return (
     <StyledHotelListContainer>
       {HomePageSliderOne.map(
-        ({ img, title, location, price, rate, id, details }, index) => (
+        ({img, title, location, price, rate, id, details}, index) => (
           <StyledHotelListItem key={index}>
             <Link to={`/hotelPage/${id}`}>
               <img src={img} alt={title} />

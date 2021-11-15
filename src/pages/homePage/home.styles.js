@@ -102,7 +102,7 @@ export const StyledSearchPartInput = styled.input`
     top: 180px;
   }
 `;
-export const StyledSearchPartResultsUl = styled.ul`
+export const StyledSearchPartResults = styled.div`
   width: 100%;
   height: ${(props) => (props.isOpen ? `auto` : `0`)};
   visibility: ${(props) => (props.isOpen ? `visible` : `hidden`)};
@@ -129,7 +129,7 @@ export const StyledSearchPartResultsUl = styled.ul`
     width: 100%;
   }
 `;
-export const StyledSearchPartResultsli = styled.li`
+export const StyledSearchPartResultsItem = styled.div`
   width: 100%;
   height: 7vh;
   border-bottom: 1px solid #e0e0e0;

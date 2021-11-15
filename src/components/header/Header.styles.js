@@ -104,6 +104,7 @@ export const StyledSliderContainer = styled.div`
   height: 100%;
   font-size: 0.8rem;
   position: fixed;
+  background-color: #245480;
   transition: all 0.25s ease-out;
   transform: ${(props) =>
     props.isSideBarOpen ? "translate(0, 0)" : "translate(-100%, 0)"};
@@ -114,7 +115,6 @@ export const StyledSliderUrderList = styled.ul`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #245480;
   font-size: 1.5em;
   z-index: 10;
 `;
@@ -123,9 +123,7 @@ export const StyledSliderListItem = styled.li`
   width: 100vw;
   height: 5.5rem;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  list-style: none;
   padding-left: 40px;
   color: #e0e0e0;
   &:hover {
@@ -135,13 +133,16 @@ export const StyledSliderListItem = styled.li`
   &:active {
     color: #48adeb;
   }
-`;
-// sideBar li icon
-export const StyledSliderListItemIcon = styled.span`
-  display: flex;
-  align-items: center;
-  margin: 10px 15px;
-  color: #48adeb;
+  & a {
+    min-width: 100vh;
+    height: inherit;
+    display: inherit;
+    align-items: center;
+  }
+  & svg {
+    margin: 10px 15px;
+    color: #48adeb;
+  }
 `;
 // sideBar close icon
 export const StyledSliderUrderListIcon = styled.span`

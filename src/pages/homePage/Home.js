@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
-import { FaStar } from "react-icons/fa";
-import { IoGridOutline } from "react-icons/io5";
-import { MdLocationOn } from "react-icons/md";
-import { BiSearch } from "react-icons/bi";
-import { RiArrowDownSLine, RiEmotionUnhappyLine } from "react-icons/ri";
+import {FaStar} from "react-icons/fa";
+import {IoGridOutline} from "react-icons/io5";
+import {MdLocationOn} from "react-icons/md";
+import {BiSearch} from "react-icons/bi";
+import {RiArrowDownSLine, RiEmotionUnhappyLine} from "react-icons/ri";
 
-import { HomePageSearchSvg, HomePageSliderOne } from "../../data/data";
+import {HomePageSearchSvg, HomePageSliderOne} from "../../data/data";
 import Slider from "./slider-1/Slider";
 import HotelsList from "./hotelsList/HotelsList";
 import Footer from "../../components/footer/Footer";
-import BgImage from "./../../assets/content/home1.png";
+import BgImage from "./../../assets/content/home1.webp";
 
 import {
   StHomeImageContainer,
@@ -23,8 +23,8 @@ import {
   StyledSearchPartIcons,
   StyledSearchPartInput,
   StyledSearchPartInputContainer,
-  StyledSearchPartResultsli,
-  StyledSearchPartResultsUl,
+  StyledSearchPartResults,
+  StyledSearchPartResultsItem,
 } from "./home.styles";
 
 const Home = () => {
@@ -64,36 +64,34 @@ const Home = () => {
               onChange={(e) => hotelSearchHandler(e)}
             />
             {searchValue && <RiArrowDownSLine />}
-            <StyledSearchPartResultsUl isOpen={searchValue}>
+            <StyledSearchPartResults isOpen={searchValue}>
               {hotel.length > 0 ? (
-                hotel.map((hotel) => {
-                  return (
-                    <Link key={hotel.id} to={`hotelpage/${hotel.id}`}>
-                      <StyledSearchPartResultsli>
-                        <p>{hotel.title}</p>
-                        <span>
-                          {hotel.rate}
-                          <FaStar />
-                        </span>
-                      </StyledSearchPartResultsli>
-                    </Link>
-                  );
-                })
+                hotel.map(({id, title, rate}) => (
+                  <Link key={id} to={`hotelpage/${id}`}>
+                    <StyledSearchPartResultsItem>
+                      <p>{title}</p>
+                      <span>
+                        {rate}
+                        <FaStar />
+                      </span>
+                    </StyledSearchPartResultsItem>
+                  </Link>
+                ))
               ) : (
-                <StyledSearchPartResultsli isMatched={hotel.length === 0}>
+                <StyledSearchPartResultsItem isMatched={hotel.length === 0}>
                   <p>NOT MATCHED</p>
                   <span>
                     <RiEmotionUnhappyLine />
                   </span>
-                </StyledSearchPartResultsli>
+                </StyledSearchPartResultsItem>
               )}
-            </StyledSearchPartResultsUl>
+            </StyledSearchPartResults>
           </StyledSearchPartInputContainer>
           <p>
             <MdLocationOn /> {USER_INFO.location}
           </p>
           <StyledSearchPartIcons>
-            {HomePageSearchSvg.map(({ icon, color }, index) => (
+            {HomePageSearchSvg.map(({icon, color}, index) => (
               <StyledSearchPartIcon key={index} color={color}>
                 {icon}
               </StyledSearchPartIcon>

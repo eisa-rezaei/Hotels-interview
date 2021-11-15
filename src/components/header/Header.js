@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
-import { SideBarData } from "../../data/data";
+import React, {useState} from "react";
+import {Link, useLocation} from "react-router-dom";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {AiOutlineClose} from "react-icons/ai";
+import {SideBarData} from "../../data/data";
 import {
   StyledHeader,
   StyledHeaderLinks,
@@ -12,7 +12,6 @@ import {
   StyledSliderContainer,
   StyledSliderUrderList,
   StyledSliderListItem,
-  StyledSliderListItemIcon,
   StyledSliderUrderListIcon,
 } from "./Header.styles";
 
@@ -78,17 +77,17 @@ const Header = () => {
         </StyledHeaderUserImage>
       </StyledHeader>
       <StyledSliderContainer isSideBarOpen={isSideBarOpen}>
+        <StyledSliderUrderListIcon>
+          <AiOutlineClose onClick={HandeltoggleSideBar()} />
+        </StyledSliderUrderListIcon>
         <StyledSliderUrderList>
-          <StyledSliderUrderListIcon>
-            <AiOutlineClose onClick={HandeltoggleSideBar()} />
-          </StyledSliderUrderListIcon>
-          {SideBarData.map(({ path, icon, title }, index) => (
-            <Link key={index} to={path}>
-              <StyledSliderListItem onClick={HandeltoggleSideBar()}>
-                <StyledSliderListItemIcon>{icon}</StyledSliderListItemIcon>
+          {SideBarData.map(({path, icon, title}, index) => (
+            <StyledSliderListItem onClick={HandeltoggleSideBar()} key={index}>
+              <Link to={path}>
+                {icon}
                 {title}
-              </StyledSliderListItem>
-            </Link>
+              </Link>
+            </StyledSliderListItem>
           ))}
         </StyledSliderUrderList>
       </StyledSliderContainer>

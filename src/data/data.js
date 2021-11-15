@@ -1,26 +1,26 @@
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
-import { BiSwim } from "react-icons/bi";
-import { CgGym } from "react-icons/cg";
-import { IoFastFoodSharp } from "react-icons/io5";
-import { IoGridOutline } from "react-icons/io5";
+import {BiSwim} from "react-icons/bi";
+import {CgGym} from "react-icons/cg";
+import {IoFastFoodSharp} from "react-icons/io5";
+import {IoGridOutline} from "react-icons/io5";
 
-import hotel1 from "../assets/content/hotel-picture-1.jpeg";
-import hotel2 from "../assets/content/hotel-picture-2.jpeg";
-import hotel3 from "../assets/content/hotel-picture-3.jpeg";
-import hotel4 from "../assets/content/hotel-picture-4.jpeg";
+import hotel1 from "../assets/content/hotel-picture-1.webp";
+import hotel2 from "../assets/content/hotel-picture-2.webp";
+import hotel3 from "../assets/content/hotel-picture-3.webp";
+import hotel4 from "../assets/content/hotel-picture-4.webp";
 
-import { ReactComponent as IconA } from "../assets/search-svg/1.svg";
-import { ReactComponent as IconB } from "../assets/search-svg/2.svg";
-import { ReactComponent as IconC } from "../assets/search-svg/3.svg";
+import {ReactComponent as IconA} from "../assets/search-svg/1.svg";
+import {ReactComponent as IconB} from "../assets/search-svg/2.svg";
+import {ReactComponent as IconC} from "../assets/search-svg/3.svg";
 
 export const SideBarData = [
-  { title: "Home", icon: <AiIcons.AiFillHome />, path: "/" },
-  { title: "favorites", icon: <IoIcons.IoIosPaper />, path: "/favorites" },
-  { title: "saved", icon: <FaIcons.FaCartPlus />, path: "/saved" },
-  { title: "Locations", icon: <IoIcons.IoMdPeople />, path: "/locations" },
-  { title: "contact", icon: <FaIcons.FaEnvelopeOpenText />, path: "/contact" },
+  {title: "Home", icon: <AiIcons.AiFillHome />, path: "/"},
+  {title: "favorites", icon: <IoIcons.IoIosPaper />, path: "/favorites"},
+  {title: "saved", icon: <FaIcons.FaCartPlus />, path: "/saved"},
+  {title: "Locations", icon: <IoIcons.IoMdPeople />, path: "/locations"},
+  {title: "contact", icon: <FaIcons.FaEnvelopeOpenText />, path: "/contact"},
 ];
 export const HomePageSliderOne = [
   {
@@ -98,7 +98,7 @@ export const HomePageSliderOne = [
 ];
 
 export const HomePageSearchSvg = [
-  { icon: <IconA />, color: "#6482f2" },
-  { icon: <IconB />, color: "#e2796b" },
-  { icon: <IconC />, color: "#5f69df" },
+  {icon: <IconA />, color: "#6482f2"},
+  {icon: <IconB />, color: "#e2796b"},
+  {icon: <IconC />, color: "#5f69df"},
 ];
