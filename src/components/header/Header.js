@@ -12,7 +12,6 @@ import {
   StyledSliderContainer,
   StyledSliderUrderList,
   StyledSliderListItem,
-  StyledSliderListItemIcon,
   StyledSliderUrderListIcon,
 } from "./Header.styles";
 
